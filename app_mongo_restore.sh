@@ -18,7 +18,7 @@ cd ${db_date}
 mongorestore --db ${app_title_id} --port ${mongo_port} --drop dump/${app_title_id}
 echo "----------------------------------"
 echo "Date: ${DB_DATE}"
-echo "APP Title ID: ${app_title_id}"
+echo "App-Title-ID: ${app_title_id}"
 echo "Mongo Port: ${mongo_port}"
 echo "Done!"
 echo "----------------------------------"

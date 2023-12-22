@@ -15,10 +15,11 @@ cordova compile
 cordova build
 bash ./scriptz/dq_footer.sh
 echo "----------------------------------"
-echo "Project ID: ${PROJECT_ID}"
-echo "APP Title: ${APP_TITLE}"
-echo "APP Title ID: ${APP_TITLE_ID}"
-echo "APP Version: ${APP_VERSION}"
+echo "Project-ID: ${PROJECT_ID}"
+echo "App Title: ${APP_TITLE}"
+echo "App-Title-ID: ${APP_TITLE_ID}"
+echo "App Version: ${APP_VERSION}"
 echo "Done!"
 echo "----------------------------------"
 exit 1
+

@@ -9,11 +9,11 @@ G_PROJECT_FOLDER="$HOME/www/projectz/"
 G_PROJECT_SRC_FOLDER="$HOME/www/doqbox/biz9/"
 G_BRANCH_DIR='stable'
 # prod start #
-echo "Enter APP ID"
+echo "Enter Project-ID"
 read project_id
-echo "Enter APP Type [cms, mobile, server, service, website, vendor, vendor-payment]"
+echo "Enter BiZ9 Framework product [cms, mobile, server, server, service, website]"
 read app_type
-echo "Enter Web Folder ID"
+echo "Enter directory"
 read folder_id
 # prod end #
 
@@ -164,10 +164,10 @@ if [ "${app_type}" = "vendor-payment" ]; then
 fi
 echo "----------------------------------"
 echo ${print_result}
-echo "Project ID: ${project_id}"
-echo "APP Type: ${app_type}"
-echo "APP Title: ${APP_TITLE}"
-echo "APP Title ID: ${APP_TITLE_ID}"
+echo "Project-ID: ${project_id}"
+echo "App Type: ${app_type}"
+echo "App Title: ${APP_TITLE}"
+echo "App-Title-ID: ${APP_TITLE_ID}"
 echo "APP Version: ${APP_VERSION}"
 echo "Directory: ${folder_id}"
 echo "Done!"

@@ -21,17 +21,17 @@ INCREMENT_VERSION ()
     echo -e "${new// /.}"
 }
 #prod-start
-echo "Enter Framework Tool: [cms, core, docz, mobile, scriptz, service, server, test, website, vendor, vendor-payment]"
+echo "Enter BiZ9 Framework product: [change-request, cms, core, help, mobile, scriptz, server, service, test, website]"
 read app_type
-echo "Enter Branch: [unstable, testing, stable]"
+echo "Enter branch: [unstable, testing, stable]"
 read branch_dir
-echo 'Enter commit noteZ:'
+echo 'Enter notes:'
 read commit_notes
 #prod-end
 ##test-start##
 : '
-app_type='website'
-branch_dir='unstable'
+app_type="website"
+branch_dir='stable'
 commit_notes="Framework Update $(date +%F@%H:%M)"
 '
 ##test-end##
@@ -42,15 +42,13 @@ if [ "${app_type}" = "cms" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CMS_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
     sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${BIZ9_VERSION_NEW}'/" app.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-CMS";
-    echo "Version: ${BIZ9_CMS_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-CMS NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
+  fi
 #core
 if [ "${app_type}" = "core" ]; then
     G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_CORE_TITLE,,}/src/${branch_dir}
@@ -58,28 +56,34 @@ if [ "${app_type}" = "core" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CORE_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
     sed -i "s/BIZ9_CORE_VERSION=.*/BIZ9_CORE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-CORE";
-    echo "Version: ${BIZ9_CORE_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Core NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
-#docz
-if [ "${app_type}" = "docz" ]; then
-    G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_DOCZ_TITLE,,}/src/${branch_dir}
+#help
+if [ "${app_type}" = "help" ]; then
+    G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_HELP_TITLE,,}/src/${branch_dir}
     cd ${G_PROJECT_DIR}
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_DOCZ_VERSION);
-    sed -i "s/BIZ9_DOCZ_VERSION=.*/BIZ9_DOCZ_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
+    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_HELP_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/BIZ9_HELP_VERSION=.*/BIZ9_HELP_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-DocZ";
-    echo "Version: ${BIZ9_DOCZ_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-DocZ NEW VERSION : ${BIZ9_VERSION_NEW}"
+fi
+#change-request
+if [ "${app_type}" = "change-request" ]; then
+    G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_CHANGE_REQUEST_TITLE,,}/src/${branch_dir}
+    cd ${G_PROJECT_DIR}
+    echo ".biz9_backup" > .gitignore
+    source .biz9_config.sh
+    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CHANGE_REQUEST_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/BIZ9_CHANGE_REQUEST_VERSION=.*/BIZ9_CHANGE_REQUEST_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
+    git add -A .
+    git commit -m  "${commit_notes}"
 fi
 #mobile
 if [ "${app_type}" = "mobile" ]; then
@@ -88,14 +92,12 @@ if [ "${app_type}" = "mobile" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_MOBILE_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" www/scripts/biz9-mobile/scriptz/config.js
     sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_VERSION_NEW}'/" www/scripts/biz9-mobile/scriptz/config.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-DocZ";
-    echo "Version: ${BIZ9_MOBILE_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Mobile NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #scriptz
 if [ "${app_type}" = "scriptz" ]; then
@@ -104,13 +106,10 @@ if [ "${app_type}" = "scriptz" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SCRIPTZ_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
     sed -i "s/BIZ9_SCRIPTZ_VERSION=.*/BIZ9_SCRIPTZ_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-ScriptZ";
-    echo "Version: ${BIZ9_SCRIPTZ_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-ScriptZ NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #service
 if [ "${app_type}" = "service" ]; then
@@ -119,14 +118,12 @@ if [ "${app_type}" = "service" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SERVICE_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
     sed -i "s/BIZ9_SERVICE_VERSION=.*/BIZ9_SERVICE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/BIZ9_SERVICE_VERSION=.*/BIZ9_SERVICE_VERSION='${BIZ9_VERSION_NEW}'/" app.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-Service";
-    echo "Version: ${BIZ9_SERVICE_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Service NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #test
 if [ "${app_type}" = "test" ]; then
@@ -135,13 +132,10 @@ if [ "${app_type}" = "test" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_TEST_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
     sed -i "s/BIZ9_TEST_VERSION=.*/BIZ9_TEST_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-Service";
-    echo "Version: ${BIZ9_TEST_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Test NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #website
 if [ "${app_type}" = "website" ]; then
@@ -150,14 +144,12 @@ if [ "${app_type}" = "website" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_WEBSITE_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
     sed -i "s/BIZ9_WEBSITE_VERSION=.*/BIZ9_WEBSITE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/BIZ9_WEBSITE_VERSION=.*/BIZ9_WEBSITE_VERSION='${BIZ9_VERSION_NEW}'/" app.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-Website";
-    echo "Version: ${BIZ9_WEBSITE_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Website NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #server
 if [ "${app_type}" = "server" ]; then
@@ -166,14 +158,10 @@ if [ "${app_type}" = "server" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SERVER_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
     sed -i "s/BIZ9_SERVER_VERSION=.*/BIZ9_SERVER_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    sed -i "s/BIZ9_SERVER_VERSION=.*/BIZ9_SERVER_VERSION='${BIZ9_VERSION_NEW}'/" app.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-Server";
-    echo "Version: ${BIZ9_SERVER_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Website NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #vendor
 if [ "${app_type}" = "vendor" ]; then
@@ -182,14 +170,12 @@ if [ "${app_type}" = "vendor" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_VENDOR_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
     sed -i "s/BIZ9_VENDOR_VERSION=.*/BIZ9_VENDOR_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/BIZ9_VENDOR_VERSION=.*/BIZ9_VENDOR_VERSION='${BIZ9_VERSION_NEW}'/" app.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-Vendor";
-    echo "Version: ${BIZ9_VENDOR_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Vendor NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 #vendor-payment
 if [ "${app_type}" = "vendor-payment" ]; then
@@ -198,19 +184,18 @@ if [ "${app_type}" = "vendor-payment" ]; then
     echo ".biz9_backup" > .gitignore
     source .biz9_config.sh
     BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_VENDOR_PAYMENT_VERSION);
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
     sed -i "s/BIZ9_VENDOR_PAYMENT_VERSION=.*/BIZ9_VENDOR_PAYMENT_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/BIZ9_VENDOR_PAYMENT_VERSION=.*/BIZ9_VENDOR_PAYMENT_VERSION='${BIZ9_VERSION_NEW}'/" app.js
     git add -A .
     git commit -m  "${commit_notes}"
-    echo "Tool: BiZ9-Vendor-Payment";
-    echo "Version: ${BIZ9_VENDOR_PAYMENT_VERSION}";
-    echo "Repo URL:${REPO_URL}"
-    echo "BIZ9-Vendor-Payment NEW VERSION : ${BIZ9_VERSION_NEW}"
 fi
 echo "----------------------------------"
-echo "APP Title: ${APP_TITLE}"
-echo "APP Type: ${app_type}"
+echo "Framework Product: ${APP_TITLE}"
+echo "Framework Version: ${BIZ9_VERSION_NEW}"
 echo "Branch: ${branch_dir}"
+echo "Repo URL: ${REPO_URL}"
 echo "Commit Notes: ${commit_notes}"
 echo "Done!"
 echo "----------------------------------"

@@ -21,84 +21,83 @@ INCREMENT_VERSION ()
         new="${part[*]}"
         echo -e "${new// /.}"
 }
-echo 'Enter noteZ:'
+echo 'Enter notes:'
 read commit_notes
-echo "Update framework version?"
-read n
-yes=$(echo $n | tr -s '[:upper:]' '[:lower:]')
-if [[  "$n" = "yes"  ]] ; then
-    APP_VERSION_NEW=$(INCREMENT_VERSION ${APP_VERSION});
-else
-    APP_VERSION_NEW=${APP_VERSION};
-fi
-G_HAS_APP=false;
+APP_VERSION_NEW=$(INCREMENT_VERSION ${APP_VERSION});
 sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
-#CMS
+#cms
 if [ "${APP_TITLE}" = "${BIZ9_CMS_TITLE}" ]; then
-    G_HAS_APP=true;
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CMS_VERSION);
-    sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${BIZ9_VERSION_NEW}'/" app.js
-    echo "BIZ9-CMS NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#CORE
-if [ "${APP_TITLE}" = "${BIZ9_CORE_TITLE}" ]; then
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CORE_VERSION);
-    sed -i "s/BIZ9_CORE_VERSION=.*/BIZ9_CORE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    echo "BIZ9-CORE NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#Docz
-if [ "${APP_TITLE}" = "${BIZ9_DOCZ_TITLE}" ]; then
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_DOCZ_VERSION);
-    sed -i "s/BIZ9_DOCZ_VERSION=.*/BIZ9_DOCZ_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    echo "BIZ9-DOCZ NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#Mobile
-if [ "${APP_TITLE}" = "${BIZ9_MOBILE_TITLE}" ]; then
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_MOBILE_VERSION);
-    sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" www/scripts/biz_scriptz/config.js
-    echo "BIZ9-Mobile NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#Scriptz
-if [ "${APP_TITLE}" = "${BIZ9_SCRIPTZ_TITLE}" ]; then
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SCRIPTZ_VERSION);
-    sed -i "s/BIZ9_SCRIPTZ_VERSION=.*/BIZ9_SCRIPTZ_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    echo "BIZ9-Scriptz NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#Service
-if [ "${APP_TITLE}" = "${BIZ9_SERVICE_TITLE}" ]; then
-    G_HAS_APP=true;
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SERVICE_VERSION);
-    sed -i "s/BIZ9_SERVICE_VERSION=.*/BIZ9_SERVICE_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    echo "BIZ9-Service NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#Test
-if [ "${APP_TITLE}" = "${BIZ9_TEST_TITLE}" ]; then
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_TEST_VERSION);
-    sed -i "s/BIZ9_TEST_VERSION=.*/BIZ9_TEST_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    echo "BIZ9-Test NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-#Web
-if [ "${APP_TITLE}" = "${BIZ9_WEB_TITLE}" ]; then
-    G_HAS_APP=true;
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_WEB_VERSION);
-    sed -i "s/BIZ9_WEB_VERSION=.*/BIZ9_WEB_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    echo "BIZ9-Web NEW VERSION : ${BIZ9_VERSION_NEW}"
-fi
-
-if [ "${G_HAS_APP}" = true ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CMS_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_CMS_TITLE};
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
     sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" app.js
+    sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${FRAMEWORK_VERSION_NEW}'/" app.js
 fi
-
+#website
+if [ "${APP_TITLE}" = "${BIZ9_WEBSITE_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_WEBSITE_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_WEBSITE_TITLE};
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" app.js
+    sed -i "s/BIZ9_WEBSITE_VERSION=.*/BIZ9_WEBSITE_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/BIZ9_WEBSITE_VERSION=.*/BIZ9_WEBSITE_VERSION='${FRAMEWORK_VERSION_NEW}'/" app.js
+fi
+#core
+if [ "${APP_TITLE}" = "${BIZ9_CORE_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_CORE_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_CORE_TITLE};
+    sed -i "s/BIZ9_CORE_VERSION=.*/BIZ9_CORE_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+fi
+#docz
+if [ "${APP_TITLE}" = "${BIZ9_DOCZ_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_DOCZ_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_DOCZ_TITLE};
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" app.js
+    sed -i "s/BIZ9_DOCZ_VERSION=.*/BIZ9_DOCZ_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/BIZ9_DOCZ_VERSION=.*/BIZ9_DOCZ_VERSION='${FRAMEWORK_VERSION_NEW}'/" app.js
+fi
+#mobile
+if [ "${APP_TITLE}" = "${BIZ9_MOBILE_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_MOBILE_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_MOBILE_TITLE};
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" app.js
+    sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${FRAMEWORK_VERSION_NEW}'/" app.js
+fi
+#SCRIPTZ
+if [ "${APP_TITLE}" = "${BIZ9_SCRIPTZ_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SCRIPTZ_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_SCRIPTZ_TITLE};
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/BIZ9_SCRIPTZ_VERSION=.*/BIZ9_SCRIPTZ_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+fi
+#service
+if [ "${APP_TITLE}" = "${BIZ9_SERVICE_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_SERVICE_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_SERVICE_TITLE};
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/APP_VERSION=.*/APP_VERSION='${APP_VERSION_NEW}'/" app.js
+    sed -i "s/BIZ9_SERVICE_VERSION=.*/BIZ9_SERVICE_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+    sed -i "s/BIZ9_SERVICE_VERSION=.*/BIZ9_SERVICE_VERSION='${FRAMEWORK_VERSION_NEW}'/" app.js
+fi
+#test
+if [ "${APP_TITLE}" = "${BIZ9_TEST_TITLE}" ]; then
+    FRAMEWORK_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_TEST_VERSION);
+    FRAMEWORK_TITLE=${BIZ9_TEST_TITLE};
+    sed -i "s/BIZ9_TEST_VERSION=.*/BIZ9_TEST_VERSION='${FRAMEWORK_VERSION_NEW}'/" .biz9_config.sh
+fi
 git add -A .
 git commit -m  "${commit_notes}"
 echo "----------------------------------"
-echo "Project ID: ${PROJECT_ID}"
-echo "APP Title: ${APP_TITLE}"
-echo "APP Title ID: ${APP_TITLE_ID}"
-echo "APP New Version: ${BIZ9_VERSION_NEW}"
-echo "Branch: ${branch_dir}"
+echo "Framework Product: ${FRAMEWORK_TITLE}"
+echo "Framework Version: ${FRAMEWORK_VERSION_NEW}"
+echo "Project-ID: ${PROJECT_ID}"
+echo "App Title: ${APP_TITLE}"
+echo "App-Title-ID: ${APP_TITLE_ID}"
+echo "App Version: ${APP_VERSION_NEW}"
 echo "Commit Notes: ${commit_notes}"
 echo "Done!"
 exit

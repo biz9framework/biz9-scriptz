@@ -14,10 +14,10 @@ cd ${DB_DIR}
 mongodump --db ${APP_TITLE_ID} --port ${MONGO_PORT}
 cd ../../../
 echo "----------------------------------"
-echo "Project ID: ${PROJECT_ID}"
-echo "APP Title: ${APP_TITLE}"
-echo "APP Title ID: ${APP_TITLE_ID}"
-echo "APP Version: ${APP_VERSION}"
+echo "Project-ID: ${PROJECT_ID}"
+echo "App Title: ${APP_TITLE}"
+echo "App-Title-ID: ${APP_TITLE_ID}"
+echo "App Version: ${APP_VERSION}"
 echo "Done!"
 echo "----------------------------------"
 exit 1

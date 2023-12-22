@@ -11,10 +11,10 @@ git checkout -b ${GIT_BRANCH}
 #git branch --show-current
 echo "----------------------------------"
 echo "Git Branch: ${git_branch}"
-echo "Project ID: ${PROJECT_ID}"
-echo "APP Title: ${APP_TITLE}"
-echo "APP Title ID: ${APP_TITLE_ID}"
-echo "APP Version: ${APP_VERSION}"
+echo "Project-ID: ${PROJECT_ID}"
+echo "App Title: ${APP_TITLE}"
+echo "App-Title-ID: ${APP_TITLE_ID}"
+echo "App Version: ${APP_VERSION}"
 echo "Done!"
 echo "----------------------------------"
 exit
