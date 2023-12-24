@@ -59,20 +59,59 @@ apksigner sign --ks-key-alias alias_name --ks ${BIZ9_MOBILE_KEY_STORE} --ks-pass
 echo "BiZ9 MOBILE AAB OK..."
 java -jar /home/mama/www/opz/toolz/bundletool/bundletool-all-1.9.1.jar build-apks --bundle=${APP_TITLE_ID}_${APP_VERSION_NEW}'.aab' --output=${APP_TITLE_ID}_${APP_VERSION_NEW}'.apks' --ks=${BIZ9_MOBILE_KEY_STORE} --ks-key-alias=alias_name --ks-pass=pass:${BIZ9_MOBILE_APP_KEY_STORE_PASSWORD}
 echo "BiZ9 MOBILE BUNDLETOOL OK..."
-rsync -rave "ssh -2 -i ${BIZ9_MOBILE_SSH_KEY}" ${APP_TITLE_ID}_${APP_VERSION_NEW}.aab  admin@${BIZ9_MOBILE_DEPLOY_IP}:${BIZ9_MOBILE_DEPLOY_DIR}
-rsync -rave "ssh -2 -i ${BIZ9_MOBILE_SSH_KEY}" ${APP_TITLE_ID}_${APP_VERSION_NEW}.apk  admin@${BIZ9_MOBILE_DEPLOY_IP}:${BIZ9_MOBILE_DEPLOY_DIR}
+rsync -rave "ssh -2 -i ${BIZ9_MOBILE_AWS_KEY_PEM}" ${APP_TITLE_ID}_${APP_VERSION_NEW}.aab  admin@${BIZ9_MOBILE_DEPLOY_IP}:${BIZ9_MOBILE_DEPLOY_LOC}
+rsync -rave "ssh -2 -i ${BIZ9_MOBILE_AWS_KEY_PEM}" ${APP_TITLE_ID}_${APP_VERSION_NEW}.apk  admin@${BIZ9_MOBILE_DEPLOY_IP}:${BIZ9_MOBILE_DEPLOY_LOC}
+echo "---------------------------------------------"
+echo "#################"
+if [ "$BIZ9_MOBILE_VERSION" != "" ]; then
+    echo "BIZ9 MOBILE VERSION : ${BIZ9_MOBILE_VERSION}"
+fi
+if [ "$BIZ9_SERVICE_VERSION" != "" ]; then
+    echo "BIZ9 SERVICE VERSION : ${BIZ9_SERVICE_VERSION}"
+fi
+if [ "$BIZ9_WEB_VERSION" != "" ]; then
+    echo "BIZ9 WEB VERSION : ${BIZ9_WEB_VERSION}"
+fi
+if [ "$BIZ9_CORE_VERSION" != "" ]; then
+    echo "BIZ9 CORE VERSION : ${BIZ9_CORE_VERSION}"
+fi
+if [ "$BIZ9_CMS_VERSION" != "" ]; then
+    echo "BIZ9 CMS VERSION : ${BIZ9_CMS_VERSION}"
+fi
+if [ "$BIZ9_SCRIPTZ_VERSION" != "" ]; then
+    echo "BIZ9 SCRIPTZ VERSION : ${BIZ9_SCRIPTZ_VERSION}"
+fi
+if [ "$APP_VERSION" != "" ]; then
+    echo "APP VERSION : ${APP_VERSION}"
+fi
+if [ "$PROJECT_ID" != "" ]; then
+    echo "PROJECT ID : ${PROJECT_ID}"
+fi
+if [ "$APP_TITLE" != "" ]; then
+    echo "APP TITLE : ${APP_TITLE}"
+fi
+if [ "$APP_VENDOR" != "" ]; then
+    echo "APP VENDOR : ${APP_VENDOR}"
+fi
+if [ "$APP_TITLE_ID" != "" ]; then
+    echo "APP TITLE ID: ${APP_TITLE_ID}"
+fi
+if [ "$CONFIG_ID" != "" ]; then
+    echo "CONFIG ID : ${CONFIG_ID}"
+fi
+if [ "$REPO_URL" != "" ]; then
+    echo "REPO URL : ${REPO_URL}"
+fi
 ##rm
 rm -rf *.apk
 rm -rf *.apks
 rm -rf *.idsig
 rm -rf *.aab
 echo "----------------------------------"
-echo "Framework Version: ${BIZ9_MOBILE_VERSION}"
-echo "Project-ID: ${PROJECT_ID}"
+echo "Project ID: ${PROJECT_ID}"
 echo "APP Title: ${APP_TITLE}"
-echo "APP-Title-ID: ${APP_TITLE_ID}"
-echo "CONFIG-ID : ${CONFIG_ID}"
-echo "APP Version: ${APP_VERSION_NEW}"
+echo "APP Title ID: ${APP_TITLE_ID}"
+echo "APP Version: ${APP_VERSION}"
 echo "Android .AAB: ${BIZ9_MOBILE_DOWNLOAD_URL}/${APP_TITLE_ID}_${APP_VERSION_NEW}.aab"
 echo "---"
 echo "Android .APK: ${BIZ9_MOBILE_DOWNLOAD_URL}/${APP_TITLE_ID}_${APP_VERSION_NEW}.apk"
