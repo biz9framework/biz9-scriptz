@@ -52,6 +52,7 @@ if [ "${app_type}" = "change-request" ]; then
     git pull ${BIZ9_GIT_URL}${BIZ9_CHANGE_REQUEST_TITLE,,}.git ${GIT_BRANCH} --allow-unrelated-histories
     git checkout -b ${GIT_BRANCH}
     source .biz9_config.sh
+    FRAMEWORK_VERSION=${BIZ9_CHANGE_REQUEST_VERSION};
 fi
 if [ "${app_type}" = "service" ]; then
     FRAMEWORK_TITLE=${BIZ9_SERVICE_TITLE};
@@ -61,6 +62,7 @@ if [ "${app_type}" = "service" ]; then
     git pull ${BIZ9_GIT_URL}${BIZ9_SERVICE_TITLE,,}.git ${GIT_BRANCH} --allow-unrelated-histories
     git checkout -b ${GIT_BRANCH}
     source .biz9_config.sh
+    FRAMEWORK_VERSION=${BIZ9_SERVICE_VERSION};
 fi
 
 if [ "${app_type}" = "website" ]; then
@@ -70,6 +72,7 @@ if [ "${app_type}" = "website" ]; then
     git init
     git pull ${BIZ9_GIT_URL}${BIZ9_WEBSITE_TITLE,,}.git ${GIT_BRANCH} --allow-unrelated-histories
     source .biz9_config.sh
+    FRAMEWORK_VERSION=${BIZ9_WEBSITE_VERSION};
 fi
 if [ "${app_type}" = "cms" ]; then
     FRAMEWORK_TITLE=${BIZ9_CMS_TITLE};
@@ -78,6 +81,7 @@ if [ "${app_type}" = "cms" ]; then
     git init
     git pull ${BIZ9_GIT_URL}${BIZ9_CMS_TITLE,,}.git ${GIT_BRANCH} --allow-unrelated-histories
     source .biz9_config.sh
+    FRAMEWORK_VERSION=${BIZ9_CMS_VERSION};
 fi
 if [ "${app_type}" = "mobile" ]; then
     FRAMEWORK_TITLE=${BIZ9_MOBILE_TITLE};
@@ -93,6 +97,7 @@ if [ "${app_type}" = "mobile" ]; then
     sed -i "s/APP_TITLE=.*/APP_TITLE='${app_title}'/" ${G_BIZ_APP_NEW_DIR}/www/scripts/biz9-mobile/scriptz/config.js
     sed -i "s/APP_TITLE_ID=.*/APP_TITLE_ID='${app_title_id}'/" ${G_BIZ_APP_NEW_DIR}/www/scripts/biz9-mobile/scriptz/config.js
     source .biz9_config.sh
+    FRAMEWORK_VERSION=${BIZ9_MOBILE_VERSION};
 fi
 if [ "${app_type}" = "server" ]; then
     FRAMEWORK_TITLE=${BIZ9_SERVER_TITLE};
@@ -103,6 +108,7 @@ if [ "${app_type}" = "server" ]; then
     #sed
     #.biz9_config
     source .biz9_config.sh
+    FRAMEWORK_VERSION=${BIZ9_SERVER_VERSION};
 fi
 #sed
 #.biz9_config
@@ -120,6 +126,7 @@ if [ "${G_HAS_APP}" = true ]; then
 fi
 echo "----------------------------------"
 echo "Framework Product: ${FRAMEWORK_TITLE}"
+echo "Framework Version: ${FRAMEWORK_VERSION}"
 echo "Project-ID: ${project_id}"
 echo "App Type: ${app_type}"
 echo "App Title: ${app_title}"

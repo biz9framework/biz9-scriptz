@@ -116,7 +116,7 @@ if [ "${app_type}" = "mobile" ]; then
     #sed
     source ${source_dir}/.biz9_config.sh
     sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_MOBILE_VERSION}';/" ${destination_dir}/.biz9_config.sh
-    sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_MOBILE_VERSION}';/" ${destination_dir}/www/scripts/biz_scriptz/config.js
+    sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_MOBILE_VERSION}';/" ${destination_dir}/www/scripts/biz9-mobile/scriptz/config.js
 fi
 if [ "${app_type}" = "scriptz" ]; then
     G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_SCRIPTZ_TITLE,,}/src/${source_dir}
