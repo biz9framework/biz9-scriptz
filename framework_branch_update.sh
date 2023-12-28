@@ -7,7 +7,7 @@ echo "BiZ9 Framework Branch Update"
 echo "#################"
 G_PROJECT_FOLDER="$HOME/www/projectz/"
 #prod-start
-echo "Enter BiZ9 Framework product: [cms, core, docz, mobile, scriptz, service, server, test, vendor, vendor-payment, website]"
+echo "Enter BiZ9 Framework product: [cms, core, mobile, scriptz, service, server, website]"
 read app_type
 echo "Enter source branch: [unstable, testing, stable]"
 read source_dir
@@ -28,21 +28,6 @@ fi
 if [ -z "${destination_dir}" ]
 then
     destination_dir='testing'
-fi
-if [ "${app_type}" = "docz" ]; then
-    G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_DOCZ_TITLE,,}/src/${source_dir}
-    cd ${BIZ9_HOME}/${BIZ9_DOCZ_TITLE,,}/src/
-    echo ".biz9_backup" > .gitignore
-    source ${destination_dir}/.biz9_config.sh
-    BIZ9_VERSION=${BIZ9_DOCZ_VERSION};
-    BIZ9_TITLE=${BIZ9_DOCZ_TITLE};
-    #rm
-    rm -rf ${destination_dir}/*
-    #copy
-    cp -rf ${source_dir}/* ${destination_dir}/
-    #sed
-    source ${source_dir}/.biz9_config.sh
-    sed -i "s/BIZ9_DOCZ_VERSION=.*/BIZ9_DOCZ_VERSION='${BIZ9_DOCZ_VERSION}';/" ${destination_dir}/.biz9_config.sh
 fi
 if [ "${app_type}" = "website" ]; then
     G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_WEBSITE_TITLE,,}/src/${source_dir}

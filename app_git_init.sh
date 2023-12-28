@@ -7,10 +7,11 @@ echo "#################"
 echo "BiZ9 App Git Init"
 echo "#################"
 git init
-git checkout -b ${GIT_BRANCH}
+git checkout -b ${BIZ9_GIT_BRANCH}
 #git branch --show-current
 echo "----------------------------------"
-echo "Git Branch: ${git_branch}"
+echo "Git Branch: ${BIZ9_GIT_BRANCH}"
+echo "Git Repo: ${BIZ9_GIT_REPO}"
 echo "Project-ID: ${PROJECT_ID}"
 echo "App Title: ${APP_TITLE}"
 echo "App-Title-ID: ${APP_TITLE_ID}"

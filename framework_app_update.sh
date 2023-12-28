@@ -39,10 +39,10 @@ mkdir .biz9_update_bk
 
 if [ "${app_type}" = "mobile" ]; then
 FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_MOBILE_TITLE,,}/src/${G_BRANCH_DIR}/
-framework_title=${BIZ9_MOBILE_TITLE}
-framework_version=${BIZ9_MOBILE_VERSION}
 #source
 source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
+framework_title=${BIZ9_MOBILE_TITLE}
+framework_version=${BIZ9_MOBILE_VERSION}
   #bk configs
     cp -rf .biz9_config.sh .biz9_update_bk/
     cp -rf www/scripts/biz9-mobile/scriptz/config.js .biz9_update_bk/
@@ -67,10 +67,10 @@ source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
     fi
 if [ "${app_type}" = "service" ]; then
     FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_SERVICE_TITLE,,}/src/${G_BRANCH_DIR}/
-    framework_title=${BIZ9_SERVICE_TITLE}
-    framework_version=${BIZ9_SERVICE_VERSION}
     #source
     source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
+    framework_title=${BIZ9_SERVICE_TITLE}
+    framework_version=${BIZ9_SERVICE_VERSION}
     #bk configs
     cp -rf .biz9_config.sh .biz9_update_bk/
     cp -rf app.js .biz9_update_bk/
@@ -90,10 +90,10 @@ if [ "${app_type}" = "service" ]; then
 fi
 if [ "${app_type}" = "cms" ]; then
     FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_CMS_TITLE,,}/src/${G_BRANCH_DIR}/
-    framework_title=${BIZ9_CMS_TITLE}
-    framework_version=${BIZ9_CMS_VERSION}
     #source
     source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
+    framework_title=${BIZ9_CMS_TITLE}
+    framework_version=${BIZ9_CMS_VERSION}
     #bk configs
     cp -rf .biz9_config.sh .biz9_update_bk/
     cp -rf app.js .biz9_update_bk/
@@ -113,10 +113,10 @@ if [ "${app_type}" = "cms" ]; then
 fi
 if [ "${app_type}" = "server" ]; then
     FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_SERVER_TITLE,,}/src/${G_BRANCH_DIR}/
-    framework_title=${BIZ9_SERVER_TITLE}
-    framework_version=${BIZ9_SERVER_VERSION}
     #source
     source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
+    framework_title=${BIZ9_SERVER_TITLE}
+    framework_version=${BIZ9_SERVER_VERSION}
     #bk configs
     cp -rf .biz9_config.sh .biz9_update_bk/
     #copy src to project dir

@@ -163,39 +163,12 @@ if [ "${app_type}" = "server" ]; then
     git add -A .
     git commit -m  "${commit_notes}"
 fi
-#vendor
-if [ "${app_type}" = "vendor" ]; then
-    G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_VENDOR_TITLE,,}/src/${branch_dir}
-    cd ${G_PROJECT_DIR}
-    echo ".biz9_backup" > .gitignore
-    source .biz9_config.sh
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_VENDOR_VERSION);
-    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
-    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
-    sed -i "s/BIZ9_VENDOR_VERSION=.*/BIZ9_VENDOR_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    sed -i "s/BIZ9_VENDOR_VERSION=.*/BIZ9_VENDOR_VERSION='${BIZ9_VERSION_NEW}'/" app.js
-    git add -A .
-    git commit -m  "${commit_notes}"
-fi
-#vendor-payment
-if [ "${app_type}" = "vendor-payment" ]; then
-    G_PROJECT_DIR=${BIZ9_HOME}/${BIZ9_VENDOR_PAYMENT_TITLE,,}/src/${branch_dir}
-    cd ${G_PROJECT_DIR}
-    echo ".biz9_backup" > .gitignore
-    source .biz9_config.sh
-    BIZ9_VERSION_NEW=$(INCREMENT_VERSION $BIZ9_VENDOR_PAYMENT_VERSION);
-    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" .biz9_config.sh
-    sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0'/" app.js
-    sed -i "s/BIZ9_VENDOR_PAYMENT_VERSION=.*/BIZ9_VENDOR_PAYMENT_VERSION='${BIZ9_VERSION_NEW}'/" .biz9_config.sh
-    sed -i "s/BIZ9_VENDOR_PAYMENT_VERSION=.*/BIZ9_VENDOR_PAYMENT_VERSION='${BIZ9_VERSION_NEW}'/" app.js
-    git add -A .
-    git commit -m  "${commit_notes}"
-fi
 echo "----------------------------------"
 echo "Framework Product: ${APP_TITLE}"
 echo "Framework Version: ${BIZ9_VERSION_NEW}"
-echo "Branch: ${branch_dir}"
-echo "Repo URL: ${REPO_URL}"
+echo "Framework Branch: ${branch_dir}"
+echo "Framework GIT Repo: ${GIT_REPO}"
+echo "GIT Branch: ${BIZ9_GIT_BRANCH}"
 echo "Commit Notes: ${commit_notes}"
 echo "Done!"
 echo "----------------------------------"

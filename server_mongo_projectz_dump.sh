@@ -6,6 +6,8 @@ source ./.biz9_config.sh
 echo "#################"
 echo "BiZ9 Server Mongo ProjectZ Dump"
 echo "#################"
+echo 'Enter Mongo Port:'
+read mongo_port
 DB_DATE=$(date +%F@%H:%M)
 echo ${DB_DATE}
 echo ./db_box_backupz/${DB_DATE};
@@ -21,7 +23,7 @@ do
        mkdir ./db_box_backupz/${line}/${DB_DATE};
    fi
    echo ${line}
-   mongodump --db ${line} --port ${MONGO_PORT} --out "./db_box_backupz/${line}/${DB_DATE}"
+   mongodump --db ${line} --port ${mongo_port} --out "./db_box_backupz/${line}/${DB_DATE}"
 done
 echo "----------------------------------"
 echo "Project List: ${PROJECT_LIST}"

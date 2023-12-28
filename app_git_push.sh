@@ -11,7 +11,7 @@ read n
 yes=$(echo $n | tr -s '[:upper:]' '[:lower:]')
 if [[  "$n" = "yes"  ]] ; then
     ##
-    git push -f ${REPO_URL} ${GIT_BRANCH}
+    git push -f ${GIT_REPO} ${BIZ9_GIT_BRANCH}
     else
     echo "exit"
 fi
@@ -58,6 +58,8 @@ fi
 echo "----------------------------------"
 echo "Framework Product: ${FRAMEWORK_TITLE}"
 echo "Framework Version: ${FRAMEWORK_VERSION}"
+echo "GIT Branch: ${BIZ9_GIT_BRANCH}"
+echo "GIT Repo: ${GIT_REPO}"
 echo "Project-ID: ${PROJECT_ID}"
 echo "App Title: ${APP_TITLE}"
 echo "App-Title-ID: ${APP_TITLE_ID}"
