@@ -5,27 +5,27 @@
 echo "#################"
 echo "BiZ9 Framework MObile IOS Deploy"
 echo "#################"
-echo 'IOS Deploy: Start';
+echo 'BiZ9 Deploy: Start';
 source .biz9_config.sh
-echo 'IOS Deploy: Android Platform Remove';
+echo 'BiZ9 Deploy: Android Platform Remove';
 cordova platform rm android
-echo 'IOS Deploy: IOS Platform Remove';
+echo 'BiZ9 Deploy: IOS Platform Remove';
 cordova platform rm ios
-echo 'IOS Deploy: IOS Platform Add';
+echo 'BiZ9 Deploy: IOS Platform Add';
 cordova platform add ios
-echo 'IOS Deploy: IOS Plugin IOS-XHR Add';
+echo 'BiZ9 Deploy: IOS Plugin IOS-XHR Add';
 cordova plugin add @globules-io/cordova-plugin-ios-xhr
-echo 'IOS Deploy: IOS Plugin Stripe Remove';
+echo 'BiZ9 Deploy: IOS Plugin Stripe Remove';
 cordova plugin rm cordova-plugin-stripe
-echo 'IOS Deploy: Build Clean';
+echo 'BiZ9 Deploy: Build Clean';
 cordova clean
-echo 'IOS Deploy: Build Prepare';
+echo 'BiZ9 Deploy: Build Prepare';
 cordova prepare
-echo 'IOS Deploy: Build Compile';
+echo 'BiZ9 Deploy: Build Compile';
 cordova compile
-echo 'IOS Deploy: Build Build';
+echo 'BiZ9 Deploy: Build Build';
 cordova build
-echo 'IOS Deploy: Complete';
+echo 'BiZ9 Deploy: Complete';
 echo "----------------------------------"
 echo "Framework Version: ${BIZ9_MOBILE_VERSION}"
 echo "Project-ID: ${PROJECT_ID}"

@@ -8,50 +8,52 @@ echo "BiZ9 App Info"
 echo "#################"
 #MOBILE
 if [ -n "${BIZ9_MOBILE_VERSION}" ]; then
-    echo "Framework: BiZ9-Mobile"
-    echo "Version : ${BIZ9_MOBILE_VERSION}"
+    echo "Framework Product: BiZ9-Mobile"
+    echo "Framework Version: ${BIZ9_MOBILE_VERSION}"
+    echo "Config-ID: ${CONFIG_ID}"
+    echo "App Vendor: ${APP_VENDOR}"
 fi
 #WEBSITE
 if [ -n "${BIZ9_WEBSITE_VERSION}" ]; then
-    echo "Framework: BiZ9-Website"
-    echo "Version : ${BIZ9_WEBSITE_VERSION}"
+    echo "Framework Product: BiZ9-Website"
+    echo "Framework Version: ${BIZ9_WEBSITE_VERSION}"
 fi
 #CORE
 if [ -n "${BIZ9_CORE_VERSION}" ]; then
-    echo "Framework: BiZ9-Core"
-    echo "Version : ${BIZ9_CORE_VERSION}"
+    echo "Framework Product: BiZ9-Core"
+    echo "Framework Version: ${BIZ9_CORE_VERSION}"
 fi
 #CMS
 if [ -n "${BIZ9_CMS_VERSION}" ]; then
-    echo "Framework: BiZ9-CMS"
-    echo "Version : ${BIZ9_CMS_VERSION}"
+    echo "Framework Product: BiZ9-CMS"
+    echo "Framework Version: ${BIZ9_CMS_VERSION}"
 fi
 #SCRIPTZ
 if [ -n "${BIZ9_SCRIPTZ_VERSION}" ]; then
-    echo "Framework: BiZ9-Scriptz"
-    echo "Version : ${BIZ9_SCRIPTZ_VERSION}"
+    echo "Framework Product: BiZ9-Scriptz"
+    echo "Framework Version: ${BIZ9_SCRIPTZ_VERSION}"
 fi
 #TESTZ
 if [ -n "${BIZ9_TEST_VERSION}" ]; then
-    echo "Framework: BiZ9-Test"
-    echo "Version : ${BIZ9_TEST_VERSION}"
+    echo "Framework Product: BiZ9-Test"
+    echo "Framework Version: ${BIZ9_TEST_VERSION}"
 fi
 #SERVER
 if [ -n "${BIZ9_SERVER_VERSION}" ]; then
-    echo "Framework: BiZ9-Server"
-    echo "Version : ${BIZ9_TEST_VERSION}"
+    echo "Framework Product: BiZ9-Server"
+    echo "Framework Version: ${BIZ9_TEST_VERSION}"
 fi
 #SERVICE
 if [ -n "${BIZ9_SERVICE_VERSION}" ]; then
-    echo "Framework: BiZ9-Service"
-    echo "Version : ${BIZ9_SERVICE_VERSION}"
+    echo "Framework Product: BiZ9-Service"
+    echo "Framework Version: ${BIZ9_SERVICE_VERSION}"
 fi
 #SERVER_IP
 if [ -n "${SERVER_IP}" ]; then
     echo "Server Ip: ${SERVER_IP}"
 fi
 #SERVER_DEPLOY_DIR
-if [ -n "${SERVER_DEPLOY_DIR}" ]; then
+if [ -n "${SERVER_DIR}" ]; then
     echo "Server Deploy Dir: ${SERVER_DEPLOY_DIR}"
 fi
 #SSH_KEY
@@ -59,12 +61,8 @@ if [ -n "${SSH_KEY}" ]; then
     echo "SSH Key: ${SSH_KEY}"
 fi
 #REPO_URL
-if [ -n "${REPO_URL}" ]; then
-    echo "Repo Url: ${REPO_URL}"
-fi
-#MONGO_PORT
-if [ -n "${MONGO_PORT}" ]; then
-    echo "Mongo Port: ${MONGO_PORT}"
+if [ -n "${GIT_REPO}" ]; then
+    echo "GIT Repo: ${GIT_REPO}"
 fi
 echo "----------------------------------"
 echo "Project-ID: ${PROJECT_ID}"

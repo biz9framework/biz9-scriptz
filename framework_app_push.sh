@@ -49,7 +49,7 @@ if [ "${app_type}" = "change-request" ]; then
     G_HAS_APP=false;
     cd ${G_BIZ_APP_NEW_DIR}/
     git init
-    git pull ${BIZ9_GIT_URL}${BIZ9_CHANGE_REQUEST_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
+    git pull ${BIZ9_GIT_REPO}${BIZ9_CHANGE_REQUEST_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
     git checkout -b ${BIZ9_GIT_BRANCH}
     source .biz9_config.sh
     FRAMEWORK_VERSION=${BIZ9_CHANGE_REQUEST_VERSION};
@@ -59,7 +59,7 @@ if [ "${app_type}" = "service" ]; then
     G_HAS_APP=true;
     cd ${G_BIZ_APP_NEW_DIR}/
     git init
-    git pull ${BIZ9_GIT_URL}${BIZ9_SERVICE_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
+    git pull ${BIZ9_GIT_REPO}${BIZ9_SERVICE_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
     git checkout -b ${BIZ9_GIT_BRANCH}
     source .biz9_config.sh
     FRAMEWORK_VERSION=${BIZ9_SERVICE_VERSION};
@@ -70,7 +70,7 @@ if [ "${app_type}" = "website" ]; then
     G_HAS_APP=true;
     cd ${G_BIZ_APP_NEW_DIR}/
     git init
-    git pull ${BIZ9_GIT_URL}${BIZ9_WEBSITE_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
+    git pull ${BIZ9_GIT_REPO}${BIZ9_WEBSITE_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
     source .biz9_config.sh
     FRAMEWORK_VERSION=${BIZ9_WEBSITE_VERSION};
 fi
@@ -79,7 +79,7 @@ if [ "${app_type}" = "cms" ]; then
     G_HAS_APP=true;
     cd ${G_BIZ_APP_NEW_DIR}/
     git init
-    git pull ${BIZ9_GIT_URL}${BIZ9_CMS_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
+    git pull ${BIZ9_GIT_REPO}${BIZ9_CMS_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
     source .biz9_config.sh
     FRAMEWORK_VERSION=${BIZ9_CMS_VERSION};
 fi
@@ -88,7 +88,7 @@ if [ "${app_type}" = "mobile" ]; then
     G_HAS_APP=false;
     cd ${G_BIZ_APP_NEW_DIR}/
     git init
-    git pull ${BIZ9_GIT_URL}${BIZ9_MOBILE_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
+    git pull ${BIZ9_GIT_REPO}${BIZ9_MOBILE_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
     #sed
     #.biz9_config
     sed -i "s/APP_VERSION=.*/APP_VERSION='1.0.0';/" ${G_BIZ_APP_NEW_DIR}/www/scripts/biz9-mobile/scriptz/config.js
@@ -104,7 +104,7 @@ if [ "${app_type}" = "server" ]; then
     G_HAS_APP=false;
     cd ${G_BIZ_APP_NEW_DIR}/
     git init
-    git pull ${BIZ9_GIT_URL}${BIZ9_SERVER_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
+    git pull ${BIZ9_GIT_REPO}${BIZ9_SERVER_TITLE,,}.git ${BIZ9_GIT_BRANCH} --allow-unrelated-histories
     #sed
     #.biz9_config
     source .biz9_config.sh
@@ -127,7 +127,7 @@ fi
 echo "----------------------------------"
 echo "Framework Product: ${FRAMEWORK_TITLE}"
 echo "Framework Version: ${FRAMEWORK_VERSION}"
-echo "GIT Branch: ${BIZ9_GIT_BRANCH}"
+echo "GIT Branch: ${GIT_BRANCH}"
 echo "GIT Repo: ${GIT_REPO}"
 
 echo "Project-ID: ${project_id}"

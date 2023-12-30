@@ -8,7 +8,6 @@ echo "BiZ9 Mobile Android Icon Update"
 echo "#################"
 node other/scriptz/icon_resize.js
 cp -rf other/cordova/icon/512.png www/images/preload-logo.png
-bash ./scriptz/dq_footer.sh
 echo "----------------------------------"
 echo "Project-ID: ${PROJECT_ID}"
 echo "APP Title: ${APP_TITLE}"
