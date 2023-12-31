@@ -13,7 +13,7 @@ echo "Are you sure you want to deploy?"
 read n
 yes=$(echo $n | tr -s '[:upper:]' '[:lower:]')
 if [[  "$n" = "yes"  ]] ; then
-        rsync -rave "ssh -2 -i ${SSH_KEY}" . admin@${SERVER_IP}:${SERVER_DEPLOY_DIR} --exclude .git --exclude other
+        rsync -rave "ssh -2 -i ${SSH_KEY}" . admin@${SERVER_IP}:${SERVER_DIR} --exclude .git --exclude other
 fi
 #CMS
 if [ -n "${BIZ9_CMS_VERSION}" ]; then
@@ -63,7 +63,7 @@ echo "App Title: ${APP_TITLE}"
 echo "App-Title-ID: ${APP_TITLE_ID}"
 echo "App Version: ${APP_VERSION}"
 echo "Server IP: ${SERVER_IP}"
-echo "Server Deploy Directory: ${SERVER_DEPLOY_DIR}"
+echo "Server Deploy Directory: ${SERVER_DIR}"
 echo "SSH Key: ${SSH_KEY}"
 echo "Done!"
 echo "----------------------------------"
