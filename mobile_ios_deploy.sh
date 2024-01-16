@@ -15,6 +15,8 @@ echo 'BiZ9 Deploy: IOS Platform Add';
 cordova platform add ios
 echo 'BiZ9 Deploy: IOS Plugin IOS-XHR Add';
 cordova plugin add @globules-io/cordova-plugin-ios-xhr
+echo 'BiZ9 Deploy: IOS Plugin In App Purchases Add';
+cordova plugin add cordova-plugin-inapppurchases
 echo 'BiZ9 Deploy: IOS Plugin Stripe Remove';
 cordova plugin rm cordova-plugin-stripe
 echo 'BiZ9 Deploy: Build Clean';

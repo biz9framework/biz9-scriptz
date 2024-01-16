@@ -4,7 +4,7 @@
 # Description: BiZ9 Framework ScriptZ : Mobile Android Deploy
 source ./.biz9_config.sh
 echo "#################"
-echo "-->BiZ9 Mobile Android Deploy"
+echo "BiZ9 Mobile Android Deploy"
 echo "#################"
 INCREMENT_VERSION ()
 {
@@ -42,25 +42,25 @@ sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_MOBILE_VERSION}'/" 
 sed -i "s/APP_TITLE/${APP_TITLE}/g" config.xml
 echo "BiZ9 MOBILE COPY CONFIG OK..."
 cordova prepare
-echo "-->BiZ9 MOBILE PREPARE OK...."
+echo "--> BiZ9 MOBILE PREPARE OK...."
 cordova compile
-echo "-->BiZ9 MOBILE COMPILE OK...."
+echo "--> BiZ9 MOBILE COMPILE OK...."
 cordova build --release android --packageType=bundle
-echo "-->BiZ9 Icon Update OK..."
+echo "--> BiZ9 Icon Update OK..."
 node other/scriptz/icon_resize.js
 cp -rf other/cordova/icon/512.png www/images/preload-logo.png
 #apk
 ${BIZ9_MOBILE_ZIPALIGN_DIR}/zipalign -f -v 4  ${BIZ9_MOBILE_APP_DEBUG_APK} ${APP_TITLE_ID}_${APP_VERSION_NEW}".apk"
 apksigner sign --ks-key-alias alias_name --ks ${BIZ9_MOBILE_KEY_STORE} --ks-pass pass:"${BIZ9_MOBILE_APP_KEY_STORE_PASSWORD}" --min-sdk-version 22 ${APP_TITLE_ID}_${APP_VERSION_NEW}".apk"
 #jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -storepass ${BIZ9_MOBILE_APP_KEY_STORE_PASSWORD} -keystore ${BIZ9_MOBILE_KEY_STORE} ${APP_TITLE_ID}_${APP_VERSION_NEW}".apk" alias_name
-echo "-->BiZ9 MOBILE APK APKSIGNER APK OK..."
+echo "--> BiZ9 MOBILE APK APKSIGNER APK OK..."
 #aab
 ${BIZ9_MOBILE_ZIPALIGN_DIR}/zipalign -f -v 4  ${BIZ9_MOBILE_APP_BUNDLE_RELEASE} ${APP_TITLE_ID}_${APP_VERSION_NEW}".aab"
 apksigner sign --ks-key-alias alias_name --ks ${BIZ9_MOBILE_KEY_STORE} --ks-pass pass:"${BIZ9_MOBILE_APP_KEY_STORE_PASSWORD}"  --min-sdk-version 22 ${APP_TITLE_ID}_${APP_VERSION_NEW}".aab"
 #jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -storepass ${BIZ9_MOBILE_APP_KEY_STORE_PASSWORD} -keystore ${BIZ9_MOBILE_KEY_STORE} ${APP_TITLE_ID}_${APP_VERSION_NEW}".aab" alias_name
-echo "-->BiZ9 MOBILE AAB OK..."
+echo "--> BiZ9 MOBILE AAB OK..."
 java -jar /home/mama/www/opz/toolz/bundletool/bundletool-all-1.9.1.jar build-apks --bundle=${APP_TITLE_ID}_${APP_VERSION_NEW}'.aab' --output=${APP_TITLE_ID}_${APP_VERSION_NEW}'.apks' --ks=${BIZ9_MOBILE_KEY_STORE} --ks-key-alias=alias_name --ks-pass=pass:${BIZ9_MOBILE_APP_KEY_STORE_PASSWORD}
-echo "-->BiZ9 MOBILE BUNDLETOOL OK..."
+echo "--> BiZ9 MOBILE BUNDLETOOL OK..."
 rsync -rave "ssh -2 -i ${BIZ9_MOBILE_SSH_KEY}" ${APP_TITLE_ID}_${APP_VERSION_NEW}.aab  admin@${BIZ9_MOBILE_DEPLOY_IP}:${BIZ9_MOBILE_DEPLOY_DIR}
 rsync -rave "ssh -2 -i ${BIZ9_MOBILE_SSH_KEY}" ${APP_TITLE_ID}_${APP_VERSION_NEW}.apk  admin@${BIZ9_MOBILE_DEPLOY_IP}:${BIZ9_MOBILE_DEPLOY_DIR}
 ##rm
