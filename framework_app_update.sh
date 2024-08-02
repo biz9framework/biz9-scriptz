@@ -7,12 +7,13 @@ echo "BiZ9 Framework App Update"
 echo "#################"
 G_PROJECT_FOLDER="$HOME/www/projectz/"
 G_PROJECT_SRC_FOLDER="$HOME/www/doqbox/biz9/"
-G_BRANCH_DIR='stable'
 # prod start #
 echo "Enter Project-ID"
 read project_id
 echo "Enter BiZ9 Framework product [cms, mobile, server, server, service, website]"
 read app_type
+echo "Enter Branch: [unstable, testing, stable]"
+read branch_dir
 echo "Enter directory"
 read folder_id
 # prod end #
@@ -38,7 +39,7 @@ rm -rf .biz9_update_bk
 mkdir .biz9_update_bk
 
 if [ "${app_type}" = "mobile" ]; then
-FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_MOBILE_TITLE,,}/src/${G_BRANCH_DIR}/
+FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_MOBILE_TITLE,,}/src/${branch_dir}/
 #source
 source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
 framework_title=${BIZ9_MOBILE_TITLE}
@@ -66,7 +67,7 @@ framework_version=${BIZ9_MOBILE_VERSION}
     sed -i "s/BIZ9_MOBILE_VERSION=.*/BIZ9_MOBILE_VERSION='${BIZ9_MOBILE_VERSION}';/" ${G_BIZ_APP_DIR}/.biz9_config.sh
     fi
 if [ "${app_type}" = "service" ]; then
-    FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_SERVICE_TITLE,,}/src/${G_BRANCH_DIR}/
+    FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_SERVICE_TITLE,,}/src/${branch_dir}/
     #source
     source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
     framework_title=${BIZ9_SERVICE_TITLE}
@@ -89,7 +90,7 @@ if [ "${app_type}" = "service" ]; then
     sed -i "s/BIZ9_SERVICE_VERSION=.*/BIZ9_SERVICE_VERSION='${BIZ9_SERVICE_VERSION}';/" ${G_BIZ_APP_DIR}/app.js
 fi
 if [ "${app_type}" = "cms" ]; then
-    FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_CMS_TITLE,,}/src/${G_BRANCH_DIR}/
+    FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_CMS_TITLE,,}/src/${branch_dir}/
     #source
     source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
     framework_title=${BIZ9_CMS_TITLE}
@@ -112,7 +113,7 @@ if [ "${app_type}" = "cms" ]; then
     sed -i "s/BIZ9_CMS_VERSION=.*/BIZ9_CMS_VERSION='${BIZ9_CMS_VERSION}';/" ${G_BIZ_APP_DIR}/app.js
 fi
 if [ "${app_type}" = "server" ]; then
-    FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_SERVER_TITLE,,}/src/${G_BRANCH_DIR}/
+    FRAMEWORK_SRC_PROJECT=${G_PROJECT_SRC_FOLDER}${BIZ9_SERVER_TITLE,,}/src/${branch_dir}/
     #source
     source ${FRAMEWORK_SRC_PROJECT}.biz9_config.sh
     framework_title=${BIZ9_SERVER_TITLE}
