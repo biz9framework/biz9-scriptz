@@ -6,7 +6,7 @@ source ../../../../biz9_config
 echo "#################"
 echo "BiZ9 Framework App Git Push"
 echo "#################"
-bash scriptz/view_git_sub_header.sh
+bash ${BIZ9_SCRIPTZ_DIRECTORY}view_git_sub_header.sh
 
 GIT_BRANCH=${BIZ9_GIT_BRANCH}
 
@@ -18,5 +18,5 @@ if [[  "$n" = "yes"  ]] ; then
     echo "exit"
 fi
 
-bash scriptz/view_footer.sh
+bash  ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit

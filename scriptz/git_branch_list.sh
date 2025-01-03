@@ -6,7 +6,7 @@ source biz9_config
 echo "#################"
 echo "BiZ9 Framework GIT Branch List"
 echo "#################"
-bash node_modules/biz9-scriptz/scriptz/view_git_sub_header.sh
+bash ${BIZ9_SCRIPTZ_DIRECTORY}view_git_sub_header.sh
 git branch
-bash node_modules/biz9-scriptz/scriptz/view_footer.sh
+bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit

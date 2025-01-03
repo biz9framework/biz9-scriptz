@@ -6,7 +6,7 @@ source biz9_config
 echo "#################"
 echo "BiZ9 Framework App Git Commit"
 echo "#################"
-bash node_modules/biz9-scriptz/scriptz/view_git_sub_header.sh
+bash ${BIZ9_SCRIPTZ_DIRECTORY}view_git_sub_header.sh
 INCREMENT_VERSION ()
 {
     declare -a part=( ${1//\./ } )
@@ -29,5 +29,5 @@ echo ${APP_VERSION_NEW}
 sed -i "s/VERSION=.*/VERSION='${VERSION_NEW}'/" biz9_config
 git add -A .
 git commit -m  "${commit_notes}"
-bash node_modules/biz9-scriptz/scriptz/view_footer.sh
+bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit

@@ -26,5 +26,5 @@ VERSION_NEW=$(INCREMENT_VERSION ${VERSION});
 git branch --show current
 git checkout -b ${VERSION_NEW}
 sed -i "s/BRANCH=.*/BRANCH='${VERSION_NEW}'/" biz9_config
-bash node_modules/biz9-scriptz/scriptz/view_footer.sh
+bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
