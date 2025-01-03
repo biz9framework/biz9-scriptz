@@ -7,6 +7,8 @@ echo "#################"
 echo "BiZ9 Framework Git Push"
 echo "#################"
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_git_sub_header.sh
+echo ${REPO}
+echo ${BRANCH}
 echo "Are you sure?"
 read n
 if [[  "$n" = "yes"  ]] ; then
