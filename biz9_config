@@ -1,4 +1,4 @@
-exports.VERSION="5.0.0"
-exports.TITLE='BiZ9-Scriptz'
-exports.REPO='git@github.com:biz9framework/biz9-scriptz.git'
-exports.BRANCH='main'
+VERSION='5.0.1'
+TITLE='BiZ9-Scriptz'
+REPO='git@github.com:biz9framework/biz9-scriptz.git'
+BRANCH='main'
