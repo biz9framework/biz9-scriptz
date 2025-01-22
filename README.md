@@ -43,6 +43,11 @@ npm install biz9-scriptz
 * [9_mobile_react_device_log_android](#9_mobile_react_device_log_android)
 * [9_mobile_react_device_port_open](#9_mobile_react_device_port_open)
 
+#### Mongo
+* [9_mongo_shell](#9_mongo_shell)
+
+
+
 #### About
 * [Credit](#credit) 
 
@@ -385,6 +390,8 @@ Open system port for React Native log messages.
 ```bash
 -- coming soon --
 ```
+
+
 
 ------------------------------------------------------------------------------------
 ### <a id="credit"></a>Credits

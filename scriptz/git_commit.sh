@@ -29,5 +29,6 @@ echo ${APP_VERSION_NEW}
 sed -i "s/VERSION=.*/VERSION='${VERSION_NEW}'/" biz9_config
 git add -A .
 git commit -m  "${commit_notes}"
+npm version patch --no-git-tag-version --tag-version-prefix=''
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit

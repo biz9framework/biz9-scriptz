@@ -11,8 +11,12 @@ echo '------------'
 echo 'App Info'
 echo '---'
 echo "Title: " ${TITLE};
+echo "Version: " ${VERSION};
 echo "App Title ID: " ${APP_TITLE_ID};
 echo "Project ID: " ${PROJECT_ID};
 echo "Port ID: " ${PORT_ID};
+echo "REPO: " ${REPO};
+echo "BRANCH: " ${BRANCH};
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
+
