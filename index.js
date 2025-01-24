@@ -2,12 +2,23 @@ const fs = require("fs");
 const async=require("async");
 const prompt = require('prompt-sync')();
 const { exec } = require('child_process');
-//const biz9_config_file=__dirname+"/../../"+"biz9_config.js";
 const biz9_config_file=__dirname+"/../../"+"biz9_config";
+//const biz9_config_file=__dirname+"/biz9_config";
 //const package_file=__dirname+"/../../"+"package.json";
 //const biz9_config = require(biz9_config_file);
-
-const package = require(package_file);
+const get_biz9_app_config = () => {
+biz9_app_config = {};
+fileContent = fs.readFileSync(biz9_config_file, 'utf-8');
+    lines = fileContent.split('\n');
+        lines.forEach(line => {
+            const [key, value] = line.split('=');
+            if (key && value) {
+                biz9_app_config[key] = value.replace(/"/g, '').replace(/'/g, '').replace(/;/g, ''); // Remove quotes
+            }
+        });
+    return biz9_app_config;
+};
+//const package = require(package_file);
 class Print {
     static show_header(title) {
         console.log('############');
@@ -382,11 +393,11 @@ module.exports.git_branch_commit_old = function () {
 };
 module.exports.info_old = function () {
     exec('./script.sh', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-    console.log(`stdout: ${stdout}`); // Outputs: value
+        if (error) {
+            console.error(`exec error: ${error}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`); // Outputs: value
     });
     Print.show_header('BiZ9 Framework Info');
     console.log("Title: "+biz9_config.TITLE);
@@ -671,3 +682,7 @@ module.exports.react_device_port_open_old = function () {
             Print.show_footer();
         });
 };
+module.exports = {
+    get_biz9_app_config,
+};
+
