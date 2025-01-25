@@ -6,17 +6,17 @@ const biz9_config_file=__dirname+"/../../"+"biz9_config";
 //const biz9_config_file=__dirname+"/biz9_config";
 //const package_file=__dirname+"/../../"+"package.json";
 //const biz9_config = require(biz9_config_file);
-const get_biz9_app_config = () => {
-biz9_app_config = {};
+const get_biz9_config = () => {
+biz9_config = {};
 fileContent = fs.readFileSync(biz9_config_file, 'utf-8');
     lines = fileContent.split('\n');
         lines.forEach(line => {
             const [key, value] = line.split('=');
             if (key && value) {
-                biz9_app_config[key] = value.replace(/"/g, '').replace(/'/g, '').replace(/;/g, ''); // Remove quotes
+                biz9_config[key] = value.replace(/"/g, '').replace(/'/g, '').replace(/;/g, ''); // Remove quotes
             }
         });
-    return biz9_app_config;
+    return biz9_config;
 };
 //const package = require(package_file);
 class Print {
@@ -683,6 +683,6 @@ module.exports.react_device_port_open_old = function () {
         });
 };
 module.exports = {
-    get_biz9_app_config,
+    get_biz9_config,
 };
 
