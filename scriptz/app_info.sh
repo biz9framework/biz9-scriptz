@@ -23,6 +23,7 @@ echo "Branch: " ${BRANCH};
 echo '-- Git Info End --'
 
 echo "-- MongoDB Start --";
+echo "Mongo IP: " ${MONGO_IP};
 echo "Mongo Username Password: " ${MONGO_USERNAME_PASSWORD};
 echo "Mongo Port ID: " ${MONGO_PORT_ID};
 echo "Mongo Server User: " ${MONGO_SERVER_USER};
