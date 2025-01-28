@@ -1,10 +1,10 @@
 {
   "name": "biz9-scriptz",
-  "version": "5.1.9",
+  "version": "5.1.10",
   "description": "The BiZ9-ScriptZ framework component handles all scripting for the BiZ9-Framework. ",
   "main": "index.js",
   "scripts": {
-    "preinstall": ".configure",
+    "preinstall": "configure",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "#Certified CoderZ",
