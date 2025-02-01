@@ -1,7 +1,5 @@
 const fs = require("fs");
 const async=require("async");
-const prompt = require('prompt-sync')();
-const { exec } = require('child_process');
 const biz9_config_file=__dirname+"/../../"+"biz9_config";
 //const biz9_config_file=__dirname+"/biz9_config";
 //const package_file=__dirname+"/../../"+"package.json";
