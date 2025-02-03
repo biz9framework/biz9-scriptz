@@ -8,6 +8,7 @@ echo "BiZ9 Framework GIT Pull"
 echo "#################"
 bash node_modules/biz9-scriptz/scriptz/view_git_sub_header.sh
 
+git reset --hard HEAD
 git pull ${REPO}
 
 bash node_modules/biz9-scriptz/scriptz/view_footer.sh
