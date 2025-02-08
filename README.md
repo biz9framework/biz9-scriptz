@@ -52,6 +52,17 @@ npm install biz9-scriptz
 #### Mongo
 * [9_mongo_shell](#9_mongo_shell)
 
+#### Node Package Manager
+* [9_npm_publish](#9_npm_publish)
+
+#### Redis
+* [9_redis_start](#9_redis_start)
+* [9_redis_flush](#9_redis_flush)
+
+#### OS
+* [9_os_info](#9_os_info)
+
+
 #### About
 * [Credit](#credit) 
 
@@ -62,7 +73,7 @@ tbd
 - none
 #### Example
 ```bash
--- code_here --
+-- n/a --
 ```
 -------------------------------------------------------------
 
@@ -417,7 +428,7 @@ END
 
 ```
 ### <a id="9_mobile_android_emulator_start"></a>9_mobile_android_emulator_start
-Start Android emulator.
+Start Android emulator on local development box.
 #### Params
 - none
 #### Example
@@ -431,31 +442,31 @@ tbd
 - none
 #### Example
 ```bash
--- code_here --
+-- n/a --
 ```
 ### <a id="9_mobile_react_build"></a>9_mobile_react_build
-React Native build project.
+Build source code project to check for errors.
 #### Params
 - none
 #### Example
 ```bash
--- coming soon --
+-- n/a --
 ```
 ### <a id="9_mobile_react_cache_reset"></a>9_mobile_react_cache_reset
-React Native cache reset.
+Clear cache from React Native project.
 #### Params
 - none
 #### Example
 ```bash
--- coming soon --
+-- n/a --
 ```
 ### <a id="9_mobile_react_clean"></a>9_mobile_react_clean
-React Native clean project.
+Clean React Native project source code files.
 #### Params
 - none
 #### Example
 ```bash
--- coming soon --
+-- n/a --
 ```
 ### <a id="9_mobile_react_device_build_deploy"></a>9_mobile_react_device_build_deploy
 React Native device build and deploy to device.
@@ -463,7 +474,7 @@ React Native device build and deploy to device.
 - none
 #### Example
 ```bash
--- coming soon --
+-- n/a --
 ```
 ### <a id="9_mobile_react_device_log_android"></a>9_mobile_react_device_log_android
 React Native device log messages on system.
@@ -471,7 +482,7 @@ React Native device log messages on system.
 - none
 #### Example
 ```bash
--- coming soon --
+-- n/a --
 ```
 ### <a id="9_mobile_react_device_port_open"></a>9_mobile_react_device_port_open
 Open system port for React Native log messages.
@@ -479,10 +490,111 @@ Open system port for React Native log messages.
 - none
 #### Example
 ```bash
--- coming soon --
+-- n/a --
+```
+### <a id="9_mongo_shell"></a>9_mongo_shell
+Start Mongo shell.
+#### Params
+- none
+#### Example
+```bash
+Current Mongosh Log ID: 67a6dad2ffaef9f101e94969
+Connecting to:          mongodb://127.0.0.1:27019/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.4
+Using MongoDB:          8.0.4
+Using Mongosh:          2.3.4
+mongosh 2.3.9 is available for download: https://www.mongodb.com/try/download/shell
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+------
+test> show dbs
+admin   40.00 KiB
+config  60.00 KiB
+feb7    40.00 KiB
+local   72.00 KiB
+test> 
+
+```
+### <a id="9_mongo_start"></a>9_mongo_start
+Start Mongo server.
+#### Params
+- none
+#### Example
+```bash
+[sudo] password for think1: 
+about to fork child process, waiting until server is ready for connections.
+forked process: 2414995
+ERROR: child process failed, exited with 1
+To see additional information in this output, start without the "--fork" option.
+
+```
+### <a id="9_npm_publish"></a>9_npm_publish
+NPM.com publish package.
+#### Params
+- none
+#### Example
+```bash
+#################
+BiZ9 Framework NPM Publish
+#################
+npm notice 
+npm notice 📦  biz9-data-client@1.0.11
+npm notice === Tarball Contents === 
+npm notice 3.0kB adapter.js       
+npm notice 80B   babel.config.json
+npm notice 112B  biz9_config      
+npm notice 989B  index.js         
+npm notice 376B  package.json     
+npm notice 78B   test_run         
+npm notice 3.8kB test.js          
+npm notice === Tarball Details === 
+npm notice name:          biz9-data-client                        
+npm notice version:       1.0.11                                  
+npm notice filename:      biz9-data-client-1.0.11.tgz             
+npm notice package size:  2.0 kB                                  
+npm notice unpacked size: 8.4 kB                                  
+npm notice shasum:        36c73dbda81e66e805d472c0ecf42a441161cbb1
+npm notice integrity:     sha512-3hMoCypEdlSWA[...]S45VFp7D/WD4Q==
+npm notice total files:   7                                       
+npm notice 
+npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
++ biz9-data-client@1.0.11
+############
+END
+2025-02-07 23:38:17
+############
+
 ```
 
+### <a id="9_os_info"></a>9_os_info
+The local development box operating system. 
+#### Params
+- none
+#### Example
+```bash
+No LSB modules are available.
+Distributor ID: Debian
+Description:    Debian GNU/Linux 12 (bookworm)
+Release:        12
+Codename:       bookworm
 
+```
+
+### <a id="9_redis_start"></a>9_redis_start
+Start the Redis server on local development box.
+#### Params
+- none
+#### Example
+```bash
+-- n/a --
+```
+
+### <a id="9_redis_flush"></a>9_redis_flush
+Flush the Redis server. 
+#### Params
+- none
+#### Example
+```bash
+-- n/a --
+```
 
 ------------------------------------------------------------------------------------
 ### <a id="credit"></a>Credits
