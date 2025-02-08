@@ -8,10 +8,10 @@ Use the [npm](https://npm.com) installer to install.
 npm install biz9-scriptz
 ```
 ## Required
-* [BiZ9 Config File](biz9_config_file)
+* [BiZ9 Config](#biz9_config)
 
 ## Optional
-* [GIT](https://git-scm.com/downloads)
+* [Git](https://git-scm.com/downloads)
 * [nodemon](https://www.npmjs.com/package/nodemon)
 * [Redis](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
 
@@ -19,14 +19,19 @@ npm install biz9-scriptz
 #### App
 * [9_blank](#9_blank)
 * [9_app_info](#9_app_info)
+* [9_search_string_filez](#9_search_string_filez)
+* [9_search_filename](#9_search_filename)
+
 #### App Service
 * [9_node_service_start](#9_node_service_start)
 * [9_port_open_list](#9_port_open_list)
 * [9_react_start](#9_react_start)
+
 #### Diff
 * [9_diff_file](#9_diff_file)
 * [9_diff_folder](#9_diff_folder)
-#### GIT
+
+#### Git
 * [9_git_branch_update](#9_git_branch_update)
 * [9_git_branch_list](#9_git_branch_list)
 * [9_git_commit](#9_git_commit)
@@ -34,6 +39,7 @@ npm install biz9-scriptz
 * [9_git_push](#9_git_push)
 * [9_git_reset_init](#9_git_reset_init)
 * [9_git_main_branch_merge_checkout](#9_git_main_branch_merge_checkout)
+
 #### Mobile
 * [9_mobile_android_emulator_start](#9_mobile_android_emulator_start)
 * [9_mobile_react_build](#9_mobile_react_build)
@@ -45,8 +51,6 @@ npm install biz9-scriptz
 
 #### Mongo
 * [9_mongo_shell](#9_mongo_shell)
-
-
 
 #### About
 * [Credit](#credit) 
@@ -60,8 +64,17 @@ tbd
 ```bash
 -- code_here --
 ```
-
 -------------------------------------------------------------
+
+### <a id="biz9_Config"></a>BiZ9 Config
+```bash
+
+VERSION='1.0.0' #Your Application Version
+TITLE='Application Title' #Your application title
+REPO='git@github.com:username/project-title.git' #Your application Github Repo
+BRANCH='main' #Your application Git branch
+
+```
 
 ### <a id="9_app_info"></a>9_app_info
 Print BiZ9 project application specifications.
@@ -91,6 +104,26 @@ Port ID:  1901
 END
 2025-01-01 16:07:44
 ############
+```
+
+### <a id="9_search_string_filez"></a>9_search_string_filez
+tbd
+#### Params
+- string to match.
+#### Example
+```bash
+#################
+BiZ9 Framework Search String Filez
+#################
+Enter Text:
+happy
+##############
+----------------------------------
+############
+END
+2025-02-07 22:21:20
+############
+
 ```
 
 ### <a id="9_node_service_start"></a>9_node_service_start
@@ -125,6 +158,7 @@ tcp6       0      0 :::80                   :::*                    LISTEN      
 tcp6       0      0 ::1:6379                :::*                    LISTEN      707/redis-server 12 
 
 ```
+
 ### <a id="9_react_start"></a>9_react_start
 Start React application server.
 #### Params
@@ -147,6 +181,7 @@ Compare 2 different files line by line.
 $ 9_diff_file file1.js file2.js 
 console.log(" This Is File 1 "); | console.log(" This Is File 2 ");
 ```
+
 ### <a id="9_diff_folder"></a>9_diff_folder
 Compare 2 different folders file by file.
 #### Params
@@ -158,15 +193,16 @@ Only in folder_1: file1
 Only in folder_2: file2
 
 ```
+
 ### <a id="9_git_branch_update"></a>9_git_branch_update
-GIT Branch update to new version. Increment app version by 1 to make new branch name.
+Git Branch update to new version. Increment app version by 1 to make new branch name.
 #### Params
 - none
 #### Example
 ```bash
 $ 9_git_branch_update 
 #################
-BiZ9 Framework GIT Branch Update
+BiZ9 Framework Git Branch Update
 #################
 1.0.3
 Switched to a new branch '1.0.3'
@@ -176,15 +212,16 @@ END
 ############
 
 ```
-### <a id="9_blank"></a>9_blank
-Print GIT Branch list.
+
+### <a id="9_git_branch_list"></a>9_git_branch_list
+Print Git local branches.
 #### Params
 - none
 #### Example
 ```bash
 $ 9_git_branch_list 
 #################
-BiZ9 Framework GIT Branch List
+BiZ9 Framework Git branch List
 #################
 ------------
 Git Info
@@ -201,8 +238,33 @@ END
 ############
 
 ```
+
+### <a id="9_search_filename"></a>9_search_filename
+Search local folder for file name.
+#### Params
+- file name
+#### Example
+```bash
+#################
+BiZ9 Framework Search Filename
+#################
+Enter Filename:
+biz9_config
+##############
+./biz9_config
+./node_modules/biz9-utility/biz9_config
+./node_modules/biz9-adapter/biz9_config
+./node_modules/biz9-scriptz/biz9_config
+----------------------------------
+############
+END
+2025-02-07 22:57:33
+############
+
+```
+
 ### <a id="9_git_commit"></a>9_git_commit
-GIT commit aka save your code changes.
+Git commit your code changes. Check in your updates and changes.
 #### Params
 - none
 #### Example
@@ -229,8 +291,9 @@ END
 ############
 
 ```
+
 ### <a id="9_git_hub_test"></a>9_git_hub_test
-GIthub.com with system connectivity test.
+Github.com system connectivity test.
 #### Params
 - none
 #### Example
@@ -239,8 +302,9 @@ $ 9_git_hub_test
 Hi biz9framework! You've successfully authenticated, but GitHub does not provide shell access.
 
 ```
+
 ### <a id="9_git_push"></a>9_git_push
-GIT push your code to GIT remote repository.
+Git push your local code changes to Git remote repository.
 #### Params
 - none
 #### Example
@@ -271,17 +335,44 @@ To github.com:biz9framework/biZ9-project-blank-service.git
 END
 2025-01-01 18:37:15
 ############
+```
+
+### <a id="9_git_pull"></a>9_git_pull
+Git pull project from remote repository down to your local.
+#### Params
+- none
+#### Example
+```bash
+#################
+BiZ9 Framework GIT Pull
+#################
+------------
+GIT Info
+---
+Version: 1.2.1
+Repo: git@github.com:biz9framework/biz9-data-client.git
+Branch: main
+---
+HEAD is now at 4503ce2 good
+From github.com:biz9framework/biz9-data-client
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+############
+END
+2025-02-07 22:45:23
+############
 
 ```
+
 ### <a id="9_git_reset_init"></a>9_git_reset_init
-GIT reset, then intalize new GIT, last check out to main branch.
+Git reset project in current folder. Next intialize a new Git repo. Last, check out Git branch to main.
 #### Params
 - none
 #### Example
 ```bash
 9_git_reset_init 
 #################
-BiZ9 Framework GIT Reset Init
+BiZ9 Framework Git Reset Init
 #################
 ------------
 Git Info
@@ -299,7 +390,7 @@ END
 
 ```
 ### <a id="9_git_main_branch_merge_checkout"></a>9_git_main_branch_merge_checkout
-GIT switch to ‘main’ branch and checkout out 'main' branch.
+Git switch to ‘main’ branch and checkout out 'main' branch.
 #### Params
 - none
 #### Example
@@ -415,7 +506,7 @@ BoSS AppZ are web and mobile applications built for the BoSS on the go. The prim
 #### App Money NoteZ 💯
 Application Development NoteZ That Make $ense! Cuts out all the blah, blah, blah and gets right to the resultZ!
 #### The BiZ9 Framework 🦾
-The BiZ9 Framework is a user-friendly platform for building fast and scalable network applications. The framework consists of libraries and software tools like: Node,js, React Native, Angular, ExpressJS, MongoDB, Nginx, Redis, GIT, and Bash scripts. The BIZ9 Framework is designed to build, maintain, and deploy rich and robust, applications for web, Android and Apple devices. Other 3rd party  Application Programming Interfaces included are Amazon Web Service, Stripe, and Bravely.
+The BiZ9 Framework is a user-friendly platform for building fast and scalable network applications. The framework consists of libraries and software tools like: Node,js, React Native, Angular, ExpressJS, MongoDB, Nginx, Redis, Git, and Bash scripts. The BIZ9 Framework is designed to build, maintain, and deploy rich and robust, applications for web, Android and Apple devices. Other 3rd party  Application Programming Interfaces included are Amazon Web Service, Stripe, and Bravely.
 - [Website](https://github.com/biz9framework)
 - [Blog](https://bossappz.medium.com/what-is-the-biz9-framework-29731c49ad79)
 #### BoSS AppZ Developer  ClaZZ💡
