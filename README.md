@@ -1,5 +1,5 @@
 # BiZ9-ScriptZ
-The BiZ9-ScriptZ framework component handles all scripting for the BiZ9-Framework. 
+The BiZ9-ScriptZ package handles all scripting for the BiZ9-Framework based projects.   
 
 ## Installation
 Use the [npm](https://npm.com) installer to install.
@@ -9,6 +9,7 @@ npm install biz9-scriptz
 ```
 ## Required
 * [BiZ9 Config](#biz9_config)
+* [bashrc](#bashrc)
 
 ## Optional
 * [Git](https://git-scm.com/downloads)
@@ -26,6 +27,9 @@ npm install biz9-scriptz
 * [9_node_service_start](#9_node_service_start)
 * [9_port_open_list](#9_port_open_list)
 * [9_react_start](#9_react_start)
+* [9_kill_app](#9_kill_app)
+* [9_kill_all_node](#9_kill_all_node)
+* [9_kill_all_app](#9_kill_all_node)
 
 #### Diff
 * [9_diff_file](#9_diff_file)
@@ -62,20 +66,14 @@ npm install biz9-scriptz
 #### OS
 * [9_os_info](#9_os_info)
 
+#### Zip
+* [9_open_unzip](#9_open_unzip)
+* [9_open_ungzip](#9_open_ungzip)
+* [9_zip_create](#9_zip_create)
 
 #### About
 * [Credit](#credit) 
 
--------------------------------------------------------------
-### <a id="9_blank"></a>9_blank
-tbd
-#### Params
-- none
-#### Example
-```bash
--- n/a --
-```
--------------------------------------------------------------
 
 ### <a id="biz9_Config"></a>BiZ9 Config
 ```bash
@@ -84,6 +82,76 @@ VERSION='1.0.0' #Your Application Version
 TITLE='Application Title' #Your application title
 REPO='git@github.com:username/project-title.git' #Your application Github Repo
 BRANCH='main' #Your application Git branch
+
+```
+
+### <a id="bashrc"></a>bashrc
+Copy these alias commands to your local development .bashrc configuration file.
+path .bashrc
+#### Params
+- none
+#### Example
+```bash
+## BiZ9 Framework ScriptZ Alias Start ###
+
+##GLOBAL VARIABLE START ###
+export BIZ9_SCRIPTZ_DIRECTORY="node_modules/biz9-scriptz/scriptz/";
+##GLOBAL VARIABLE END ###
+
+#app
+alias 9_app_info="bash ${BIZ9_SCRIPTZ_DIRECTORY}app_info.sh";
+
+#app service
+alias 9_node_service_start='nodemon bin/www';
+alias 9_port_open_list='sudo netstat -ntlp | grep LISTEN';
+alias 9_react_start='npm start';
+alias 9_search_string_filez="bash ${BIZ9_SCRIPTZ_DIRECTORY}search_string_filez.sh";
+alias 9_search_filename="bash ${BIZ9_SCRIPTZ_DIRECTORY}search_filename.sh";
+alias 9_open_unzip="unzip ";
+alias 9_open_ungzip="gzip -d ";
+alias 9_open_zip_create="zip ";
+alias 9_kill_app='kill -9 ';
+alias 9_kill_all_node='killall node';
+alias 9_kill_all_app='killall ';
+
+#diff
+alias 9_diff_file='diff --side-by-side';
+alias 9_diff_folder="diff --brief --recursive --exclude '*.git'";
+
+#git
+alias 9_git_branch_update="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_branch_update.sh"
+alias 9_git_branch_list="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_branch_list.sh";
+alias 9_git_commit="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_commit.sh";
+alias 9_git_hub_test='ssh -T git@github.com';
+alias 9_git_push="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_push.sh";
+alias 9_git_pull="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_pull.sh";
+alias 9_git_reset_init="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_reset_init.sh";
+alias 9_git_main_branch_merge_checkout="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_main_branch_merge_checkout.sh";
+
+#mobile
+alias 9_mobile_android_emulator_start='genymotion';
+alias 9_mobile_react_build="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_build.sh";
+alias 9_mobile_react_cache_reset="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_cache_reset.sh";
+alias 9_mobile_react_clean="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_clean.sh";
+alias 9_mobile_react_device_build_deploy="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_device_build_deploy";
+alias 9_mobile_react_device_log_android="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_device_log_android.sh";
+alias 9_mobile_react_device_port_open="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_device_port_open.sh";
+
+#mongo
+alias 9_mongo_shell='mongosh --shell --port 27019';
+alias 9_mongo_start="sudo mongod --fork --config /etc/mongod.conf";
+
+#npm
+alias 9_npm_publish="bash ${BIZ9_SCRIPTZ_DIRECTORY}npm_publish.sh";
+
+#redis
+alias 9_redis_start="service redis-server start";
+alias 9_redis_flush="redis-cli FLUSHALL";
+
+#os
+alias 9_os_info="lsb_release -a";
+
+## BiZ9 Framework ScriptZ Alias End ###
 
 ```
 
@@ -595,6 +663,53 @@ Flush the Redis server.
 ```bash
 -- n/a --
 ```
+
+### <a id="9_open_unzip"></a>9_open_unzip
+Extract contents from a zip file into folder.
+#### Params
+- Zip filename. 
+#### Example
+```bash
+-- n/a --
+```
+
+### <a id="9_open_unzip"></a>9_open_unzip
+Extract contents from a zip file into folder.
+#### Params
+- Zip filename. 
+#### Example
+```bash
+-- n/a --
+```
+
+### <a id="9_kill_app"></a>9_kill_app
+Kill running proccess on local development box.
+#### Params
+- PID proccess id. 
+#### Example
+```bash
+-- n/a --
+```
+
+### <a id="9_kill_all_node"></a>9_kill_all_node
+Kill all running Node.js applications on development box. 
+#### Params
+- none
+#### Example
+```bash
+-- n/a --
+```
+
+-------------------------------------------------------------
+### <a id="9_blank"></a>9_blank
+tbd
+#### Params
+- none
+#### Example
+```bash
+-- n/a --
+```
+-------------------------------------------------------------
 
 ------------------------------------------------------------------------------------
 ### <a id="credit"></a>Credits
