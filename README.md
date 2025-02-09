@@ -1,5 +1,5 @@
 # BiZ9-ScriptZ Package
-**The BiZ9-ScriptZ** package handles popular programming scripting for common application development tasks. The scripts handle actions for popular programs such as **[Git](https://git-scm.com/)**, **Android**, **iOS**, **React**, **React Native**, **Mongo**, **Node Package Manager**, **Redis**, and **Zip**. The package consists of **Terminal** commands to quickly run these scripts using your keyboard alone. While in the **Terminal** you can run these commands directly from your project.  
+**The BiZ9-ScriptZ** package handles popular programming scripting for common application development tasks. The scripts handle actions for popular programs such as **[Git](https://git-scm.com/)**, **[Android](https://www.android.com/)**, **[iOS](https://developer.apple.com/ios/)**, **[React](https://react.dev/)**, **[React Native](https://reactnative.dev/)**, **[Mongo](https://www.mongodb.com/)**, **[Node Package Manager](https://www.npmjs.com/)**, **[Redis](https://redis.io/)**, and **[Zip](https://zip.co/us)**. The package consists of **[Terminal]()** commands to quickly run these scripts using your keyboard alone. While in the **Terminal** you can run these commands directly from your project.  
 
 ## Installation
 Use the [NPM](https://npm.com) installer to install.
