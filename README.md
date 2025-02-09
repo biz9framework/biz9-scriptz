@@ -742,7 +742,7 @@ tbd
 ### <a id="credit"></a>Credits
 
 #### Company
-- BiZ9 Framework LLC
+- **BiZ9 Framework LLC**
 
 #### Code
 - [BiZ9 Framework Github](https://github.com/biz9framework)
@@ -765,7 +765,7 @@ He is sometimes referred to as “the real Tank” from the movie [The Matrix](h
 - [Tank9Code Blog](https://medium.com/@tank9code/about-brandon-poole-sr-ac2fe8e06a09)
 - [Tank9Code Twitter](https://instagram.com/tank9code)
 - [Tank9Code Instagram](https://instagram.com/tank9code)
-- [Tank9Code Youtube](hhttps://youtube.com/@tank9code)
+- [Tank9Code Youtube](https://youtube.com/@tank9code)
 
 #### TagZ:
 ##### #BoSSAppZ
@@ -778,7 +778,7 @@ He is sometimes referred to as “the real Tank” from the movie [The Matrix](h
 ##### #Linux
 ##### #AmazonWebServices
 ##### #AppMoneyNoteZ
-##### #TaNKCode9
+##### #TaNK9Code
 ##### Thank you for your time.
 #####  Looking forward to working with you.
 ### License
