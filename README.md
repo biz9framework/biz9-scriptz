@@ -742,7 +742,7 @@ tbd
 ### <a id="credit"></a>Credits
 
 #### Company
-- BoSS AppZ
+- BiZ9 Framework LLC
 
 #### Code
 - [BiZ9 Framework Github](https://github.com/biz9framework)
@@ -752,7 +752,7 @@ tbd
 
 #### The BiZ9 Framework 🦾
 The BiZ9 Framework is a user-friendly platform for building fast and scalable network applications. The framework consists of libraries and software tools like: Node,js, ExpressJS, MongoDB, Nginx, Redis, Git, and Bash. The BIZ9 Framework is designed to build, maintain, and deploy rich, robust, and data driven real-time applications for data driven web, Android and Apple devices. Other 3rd party Application Programming Interfaces (API} that are pre included are Amazon Web Service, Stripe and Bravely.
-- [Website](https://github.com/biz9framework)
+- [Github](https://github.com/biz9framework)
 - [Blog](https://bossappz.medium.com/what-is-the-biz9-framework-29731c49ad79)
 
 #### TaNK9 Code 👽
