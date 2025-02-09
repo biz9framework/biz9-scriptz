@@ -5,7 +5,7 @@
 Use the [NPM](https://npm.com) installer to install.
 
 ```bash
-npm install biz9-scriptz
+npm i biz9-scriptz
 ```
 ## Required
 * [BiZ9 Config](#biz9_config)
