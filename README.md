@@ -84,10 +84,10 @@ npm install biz9-scriptz
 Add this file to your application root. 
 File name = biz9_config
 ```bash
-VERSION='1.0.0' #Your Application Version
-TITLE='Application Title' #Your application title
-REPO='git@github.com:username/project-title.git' #Your application Github Repo
-BRANCH='main' #Your application Git branch
+VERSION='1.0.0' 
+TITLE='Application Title' 
+REPO='git@github.com:username/project-title.git' 
+BRANCH='main' 
 
 ```
 
