@@ -2,7 +2,7 @@
 The BiZ9-ScriptZ package handles all scripting for the BiZ9-Framework based projects.   
 
 ## Installation
-Use the [npm](https://npm.com) installer to install.
+Use the [NPM](https://npm.com) installer to install.
 
 ```bash
 npm install biz9-scriptz
@@ -13,17 +13,20 @@ npm install biz9-scriptz
 
 ## Optional
 * [Git](https://git-scm.com/downloads)
-* [nodemon](https://www.npmjs.com/package/nodemon)
+* [Nodemon](https://www.npmjs.com/package/nodemon)
+* [Mongo](https://www.mongodb.com/)
+* [React Native](https://reactnative.dev/)
+* [React](https://reactnative.dev/)
 * [Redis](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
+* [Zip ](https://en.wikipedia.org/wiki/ZIP_(file_format))
 
-## Commands
-#### App
-* [9_blank](#9_blank)
+## Terminal Commands
+### App
 * [9_app_info](#9_app_info)
 * [9_search_string_filez](#9_search_string_filez)
 * [9_search_filename](#9_search_filename)
 
-#### App Service
+### App Service
 * [9_node_service_start](#9_node_service_start)
 * [9_port_open_list](#9_port_open_list)
 * [9_react_start](#9_react_start)
@@ -31,11 +34,11 @@ npm install biz9-scriptz
 * [9_kill_all_node](#9_kill_all_node)
 * [9_kill_all_app](#9_kill_all_node)
 
-#### Diff
+### Diff
 * [9_diff_file](#9_diff_file)
 * [9_diff_folder](#9_diff_folder)
 
-#### Git
+### Git
 * [9_git_branch_update](#9_git_branch_update)
 * [9_git_branch_list](#9_git_branch_list)
 * [9_git_commit](#9_git_commit)
@@ -44,7 +47,7 @@ npm install biz9-scriptz
 * [9_git_reset_init](#9_git_reset_init)
 * [9_git_main_branch_merge_checkout](#9_git_main_branch_merge_checkout)
 
-#### Mobile
+### Mobile
 * [9_mobile_android_emulator_start](#9_mobile_android_emulator_start)
 * [9_mobile_react_build](#9_mobile_react_build)
 * [9_mobile_react_cache_reset](#9_mobile_react_cache_reset)
@@ -53,31 +56,34 @@ npm install biz9-scriptz
 * [9_mobile_react_device_log_android](#9_mobile_react_device_log_android)
 * [9_mobile_react_device_port_open](#9_mobile_react_device_port_open)
 
-#### Mongo
+### Mongo
 * [9_mongo_shell](#9_mongo_shell)
+* [9_mongo_start](#9_mongo_start)
 
-#### Node Package Manager
+### Node Package Manager
 * [9_npm_publish](#9_npm_publish)
 
-#### Redis
+### Redis
 * [9_redis_start](#9_redis_start)
 * [9_redis_flush](#9_redis_flush)
 
-#### OS
+### OS
 * [9_os_info](#9_os_info)
 
-#### Zip
+### Zip
 * [9_open_unzip](#9_open_unzip)
 * [9_open_ungzip](#9_open_ungzip)
 * [9_zip_create](#9_zip_create)
+* [9_open_zip_create](#9_open_zip_create)
 
-#### About
+## About
 * [Credit](#credit) 
 
 
-### <a id="biz9_Config"></a>BiZ9 Config
+### <a id="biz9_config"></a>BiZ9 Config
+Add this file to your application root. 
+File name = biz9_config
 ```bash
-
 VERSION='1.0.0' #Your Application Version
 TITLE='Application Title' #Your application title
 REPO='git@github.com:username/project-title.git' #Your application Github Repo
@@ -86,8 +92,11 @@ BRANCH='main' #Your application Git branch
 ```
 
 ### <a id="bashrc"></a>bashrc
-Copy these alias commands to your local development .bashrc configuration file.
-path .bashrc
+Terminal alias commands. Copy and paste the command values to your local development box configuration file found in the user system root directory.
+
+Run this command to open and edit.  
+vi /home/username/.bashrc
+
 #### Params
 - none
 #### Example
@@ -186,11 +195,12 @@ END
 ```
 
 ### <a id="9_search_string_filez"></a>9_search_string_filez
-tbd
+Search folder and subfolders for specific text in file.
 #### Params
-- string to match.
+- search (string)
 #### Example
 ```bash
+$ 9_search_string_filez
 #################
 BiZ9 Framework Search String Filez
 #################
@@ -206,7 +216,7 @@ END
 ```
 
 ### <a id="9_node_service_start"></a>9_node_service_start
-Start Express.js nodemon application server.
+Start Express.js Nodemon application server.
 #### Params
 - none
 #### Example
@@ -221,7 +231,7 @@ $ 9_node_service_start
 
 ```
 ### <a id="9_port_open_list"></a>9_port_open_list
-Print all open ports on system.
+Print all open ports on the system.
 #### Params
 - none
 #### Example
@@ -274,7 +284,7 @@ Only in folder_2: file2
 ```
 
 ### <a id="9_git_branch_update"></a>9_git_branch_update
-Git Branch update to new version. Increment app version by 1 to make new branch name.
+Git Branch update to new version. Increment app version by 1 to make a new branch name.
 #### Params
 - none
 #### Example
@@ -319,9 +329,9 @@ END
 ```
 
 ### <a id="9_search_filename"></a>9_search_filename
-Search local folder for file name.
+Search filename for specific text in folder and sub folders.
 #### Params
-- file name
+- search (string)
 #### Example
 ```bash
 #################
@@ -345,10 +355,10 @@ END
 ### <a id="9_git_commit"></a>9_git_commit
 Git commit your code changes. Check in your updates and changes.
 #### Params
-- none
+- commit notes ( string )
 #### Example
 ```bash
-9_git_commit 
+$ 9_git_commit 
 #################
 BiZ9 Framework App Git Commit
 #################
@@ -647,7 +657,7 @@ Codename:       bookworm
 ```
 
 ### <a id="9_redis_start"></a>9_redis_start
-Start the Redis server on local development box.
+Start the Redis server on the local development box.
 #### Params
 - none
 #### Example
@@ -665,36 +675,53 @@ Flush the Redis server.
 ```
 
 ### <a id="9_open_unzip"></a>9_open_unzip
-Extract contents from a zip file into folder.
+Extract contents from a zip file into the folder.
 #### Params
-- Zip filename. 
+- filename ( string ) 
 #### Example
 ```bash
 -- n/a --
 ```
 
-### <a id="9_open_unzip"></a>9_open_unzip
-Extract contents from a zip file into folder.
+### <a id="9_open_ungzip"></a>9_open_ungzip
+Extract contents from a gzip file into the folder.
 #### Params
-- Zip filename. 
+- filename ( string )
 #### Example
 ```bash
 -- n/a --
 ```
+
+### <a id="9_open_zip_create"></a>9_open_zip_create
+Create a zip file from the folder.
+#### Params
+- filename ( string )
+#### Example
+```bash
+-- n/a --
 
 ### <a id="9_kill_app"></a>9_kill_app
-Kill running proccess on local development box.
+Kill running process on local development box.
 #### Params
-- PID proccess id. 
+- running proccess ID ( int ) 
 #### Example
 ```bash
 -- n/a --
 ```
 
 ### <a id="9_kill_all_node"></a>9_kill_all_node
-Kill all running Node.js applications on development box. 
+Kill all running Node.js applications on the development box.
 #### Params
 - none
+#### Example
+```bash
+-- n/a --
+```
+
+### <a id="9_kill_all_app"></a>9_kill_all_app
+Kill all running programs that match given title.
+#### Params
+- program title ( string )
 #### Example
 ```bash
 -- n/a --
@@ -719,50 +746,23 @@ tbd
 
 #### Code
 - [BiZ9 Framework Github](https://github.com/biz9framework)
-- [BiZ9 Data](https://www.npmjs.com/package/biz9-data)
-- [BiZ9 Data](https://www.npmjs.com/package/biz9-data)
 
 #### E-mail
 - certifiedcoderz@gmail.com
-#### Website
-- [bossappz.com](https://bossappz.com)
-- [mobile.bossappz.com](https://mobile.bossappz.com)
-#### BoSS AppZ 💰
-BoSS AppZ are web and mobile applications built for the BoSS on the go. The primary features of the BoSS AppZ are ThemeForest.net, The BiZ9 Framework, and Amazon Web Services. BoSS ApZZ powers many applications in the healthcare, retail and manufacturing industries.
-- [Blog](https://bossappz.medium.com)
-#### App Money NoteZ 💯
-Application Development NoteZ That Make $ense! Cuts out all the blah, blah, blah and gets right to the resultZ!
+
 #### The BiZ9 Framework 🦾
-The BiZ9 Framework is a user-friendly platform for building fast and scalable network applications. The framework consists of libraries and software tools like: Node,js, React Native, Angular, ExpressJS, MongoDB, Nginx, Redis, Git, and Bash scripts. The BIZ9 Framework is designed to build, maintain, and deploy rich and robust, applications for web, Android and Apple devices. Other 3rd party  Application Programming Interfaces included are Amazon Web Service, Stripe, and Bravely.
+The BiZ9 Framework is a user-friendly platform for building fast and scalable network applications. The framework consists of libraries and software tools like: Node,js, ExpressJS, MongoDB, Nginx, Redis, Git, and Bash. The BIZ9 Framework is designed to build, maintain, and deploy rich, robust, and data driven real-time applications for data driven web, Android and Apple devices. Other 3rd party Application Programming Interfaces (API} that are pre included are Amazon Web Service, Stripe and Bravely.
 - [Website](https://github.com/biz9framework)
 - [Blog](https://bossappz.medium.com/what-is-the-biz9-framework-29731c49ad79)
-#### BoSS AppZ Developer  ClaZZ💡
-The BoSS AppZ Application Development Class is custom designed for each individual that desires to learn the art of application development for career or self-use purposes. We will teach you and train you on how to become a full stack application developer. Mobile applications are the future. Stay informed with the best and greatest tools for application development. 
-- [Website](https://bossappz.com)
-#### TaNK9 Code 👽
-Brandon Poole Sr also known as ‘TaNK’ is a full stack application developer
-born and raised in Atlanta Ga and graduated with a Computer Information Systems degree from Fort Valley State University (FVSU).  While attending FVSU Mr. Poole created a social network titled CrunkFriends. It accumulated over 50k registered members and was the first of its kind back in 2005.
 
-Mr. Poole went on to have a career as a Senior Application Developer for many premium Technology companies. The names of those tech companies are Colonial Pipeline, The Boeing Company, Georgia Pacific, Nascar, Home Depot, the Center for Disease Control, American Cancer Society, and the United Parcel Service (UPS). 
+#### TaNK9 Code 👽
+Brandon Poole Sr also known as ‘TaNK’ is a technical lead and full stack software engineer with over 19 years of experience. He was born and raised in Atlanta, Ga and graduated with a Computer Information Systems degree from Fort Valley State University (FVSU). He is proficient in ASP.NET C#, ASP.NET MVC, .NET Core, Microsoft SQL Server, IIS Web Server, Node.js, Framework7, Redis, Amazon Web Services, Apple IOS, Android SDK, Redis, NGINX, and Git.  He has worked as a software developer for Fortune 500 companies such as The Boeing Company, Georgia Pacific, Colonial Pipeline, Home Depot and United Parcel Services.
 
 He is sometimes referred to as “the real Tank” from the movie The Matrix.
 
-- [Website](https://certifiedcoderz.com)
-- [Blog](https://medium.com/@tank9code/about-brandon-poole-sr-ac2fe8e06a09)
-- [Email](mailto:certifiedcoderz@gmail.com)
-#### Brandon Poole Sr.
-- BoSS AppZ Creator
-- 9_OPZ #Certified CoderZ Founder
-- The Real Tank from the #Matrix movie! 
-- Expert in Open Source Software
-#### LinkZ:
-- [bossappz.com](bossappz.com)
-- [medium.com/bossappz](medium.com/bossappz)
-- [bossappz.blogspot.com](https://bossappz.blogspot.com)
-- [twitter.com/boss_appz](https:twitter.com/boss_appz)
-- [youtube.com/boss_appz](https://www.youtube.com/@mybossapp/videos)
-- [instagram.com/bossappz_showcase](instagram.com/bossappz_showcase)
-- [facebook.com/bossappz](facebook.com/bossappz)
+- [Tank9Code Blog](https://medium.com/@tank9code/about-brandon-poole-sr-ac2fe8e06a09)
+- [Tank9Code Twitter](https://instagram.com/tank9code)
+
 #### TagZ:
 ##### #BoSSAppZ
 ##### #BiZ9Framework
