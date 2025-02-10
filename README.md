@@ -1,5 +1,5 @@
-# BiZ9-ScriptZ Package
-**The BiZ9-ScriptZ** package handles popular programming scripting for common application development tasks. The scripts handle actions for popular programs such as **[Git](https://git-scm.com/)**, **[Android](https://www.android.com/)**, **[iOS](https://developer.apple.com/ios/)**, **[React](https://react.dev/)**, **[React Native](https://reactnative.dev/)**, **[Mongo](https://www.mongodb.com/)**, **[Node Package Manager](https://www.npmjs.com/)**, **[Redis](https://redis.io/)**, and **[Zip](https://zip.co/us)**. The package consists of **[Terminal]()** commands to quickly run these scripts using your keyboard alone. While in the **Terminal** you can run these commands directly from your project.  
+# BiZ9-ScriptZ
+**The BiZ9-ScriptZ Package** package handles popular programming scripting for common application development tasks. The scripts handle actions for popular programs such as **[Git](https://git-scm.com/)**, **[Android](https://www.android.com/)**, **[iOS](https://developer.apple.com/ios/)**, **[React](https://react.dev/)**, **[React Native](https://reactnative.dev/)**, **[Mongo](https://www.mongodb.com/)**, **[Node Package Manager](https://www.npmjs.com/)**, **[Redis](https://redis.io/)**, and **[Zip](https://zip.co/us)**. The package consists of **[Terminal]()** commands to quickly run these scripts using your keyboard alone. While in the **Terminal** you can run these commands directly from your project.
 
 ## Installation
 Use the [NPM](https://npm.com) installer to install.
@@ -77,24 +77,24 @@ npm i biz9-scriptz
 * [9_open_zip_create](#9_open_zip_create)
 
 ## About
-* [Credit](#credit) 
+* [Credit](#credit)
 
 
 ### <a id="biz9_config"></a>BiZ9 Config
-Add this file to your application root. 
+Add this file to your application root.
 File name = biz9_config
 ```bash
-VERSION='1.0.0' 
-TITLE='Application Title' 
-REPO='git@github.com:username/project-title.git' 
-BRANCH='main' 
+VERSION='1.0.0'
+TITLE='Application Title'
+REPO='git@github.com:username/project-title.git'
+BRANCH='main'
 
 ```
 
 ### <a id="bashrc"></a>bashrc
 Terminal alias commands. Copy and paste the command values to your local development box configuration file found in the user system root directory.
 
-Run this command to open and edit.  
+Run this command to open and edit.
 vi /home/username/.bashrc
 
 #### Params
@@ -170,7 +170,7 @@ Print BiZ9 project application specifications.
 - none
 #### Example
 ```bash
-$ 9_app_info 
+$ 9_app_info
 #################
 BiZ9 Framework App Info
 #################
@@ -237,14 +237,14 @@ Print all open ports on the system.
 #### Example
 ```bash
 $ 9_port_open_list
-tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      707/redis-server 12 
-tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      915/nginx: master p 
-tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      706/cupsd           
-tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1161/exim4          
-tcp6       0      0 ::1:631                 :::*                    LISTEN      706/cupsd           
-tcp6       0      0 ::1:25                  :::*                    LISTEN      1161/exim4          
-tcp6       0      0 :::80                   :::*                    LISTEN      915/nginx: master p 
-tcp6       0      0 ::1:6379                :::*                    LISTEN      707/redis-server 12 
+tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      707/redis-server 12
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      915/nginx: master p
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      706/cupsd
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1161/exim4
+tcp6       0      0 ::1:631                 :::*                    LISTEN      706/cupsd
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1161/exim4
+tcp6       0      0 :::80                   :::*                    LISTEN      915/nginx: master p
+tcp6       0      0 ::1:6379                :::*                    LISTEN      707/redis-server 12
 
 ```
 
@@ -255,10 +255,10 @@ Start React application server.
 #### Example
 ```bash
 $ 9_react_start
-src/feature-module/pages/our-team/teamCarousel.tsx                                                      
-Line 1:17:  'useState' is defined but never used  @typescript-eslint/no-unused-vars                     src/feature-module/router/router.link.tsx                                                               Line 338:7:  Unexpected whitespace before property notificationSetting  no-whitespace-before-property   src/feature-module/user-dashboard/user-message/index.tsx                                                Line 4:8:  'Scrollbars' is defined but never used  @typescript-eslint/no-unused-vars            
-webpack compiled with 1 warning                                                                     
-No issues found.      
+src/feature-module/pages/our-team/teamCarousel.tsx
+Line 1:17:  'useState' is defined but never used  @typescript-eslint/no-unused-vars                     src/feature-module/router/router.link.tsx                                                               Line 338:7:  Unexpected whitespace before property notificationSetting  no-whitespace-before-property   src/feature-module/user-dashboard/user-message/index.tsx                                                Line 4:8:  'Scrollbars' is defined but never used  @typescript-eslint/no-unused-vars
+webpack compiled with 1 warning
+No issues found.
 ```
 
 ### <a id="9_diff_file"></a>9_diff_file
@@ -267,7 +267,7 @@ Compare 2 different files line by line.
 - filename 1, filename 2
 #### Example
 ```bash
-$ 9_diff_file file1.js file2.js 
+$ 9_diff_file file1.js file2.js
 console.log(" This Is File 1 "); | console.log(" This Is File 2 ");
 ```
 
@@ -289,7 +289,7 @@ Git Branch update to new version. Increment app version by 1 to make a new branc
 - none
 #### Example
 ```bash
-$ 9_git_branch_update 
+$ 9_git_branch_update
 #################
 BiZ9 Framework Git Branch Update
 #################
@@ -308,7 +308,7 @@ Print Git local branches.
 - none
 #### Example
 ```bash
-$ 9_git_branch_list 
+$ 9_git_branch_list
 #################
 BiZ9 Framework Git branch List
 #################
@@ -358,7 +358,7 @@ Git commit your code changes. Check in your updates and changes.
 - commit notes ( string )
 #### Example
 ```bash
-$ 9_git_commit 
+$ 9_git_commit
 #################
 BiZ9 Framework App Git Commit
 #################
@@ -387,7 +387,7 @@ Github.com system connectivity test.
 - none
 #### Example
 ```bash
-$ 9_git_hub_test 
+$ 9_git_hub_test
 Hi biz9framework! You've successfully authenticated, but GitHub does not provide shell access.
 
 ```
@@ -398,7 +398,7 @@ Git push your local code changes to Git remote repository.
 - none
 #### Example
 ```bash
-$ 9_git_push 
+$ 9_git_push
 #################
 BiZ9 Framework Git Push
 #################
@@ -459,7 +459,7 @@ Git reset project in current folder. Next intialize a new Git repo. Last, check 
 - none
 #### Example
 ```bash
-9_git_reset_init 
+9_git_reset_init
 #################
 BiZ9 Framework Git Reset Init
 #################
@@ -484,7 +484,7 @@ Git switch to ‘main’ branch and checkout out 'main' branch.
 - none
 #### Example
 ```bash
-$ 9_git_main_branch_merge_checkout 
+$ 9_git_main_branch_merge_checkout
 #################
 BiZ9 Framework Git Main Branch Merge Checkout
 #################
@@ -588,7 +588,7 @@ admin   40.00 KiB
 config  60.00 KiB
 feb7    40.00 KiB
 local   72.00 KiB
-test> 
+test>
 
 ```
 ### <a id="9_mongo_start"></a>9_mongo_start
@@ -597,7 +597,7 @@ Start Mongo server.
 - none
 #### Example
 ```bash
-[sudo] password for think1: 
+[sudo] password for think1:
 about to fork child process, waiting until server is ready for connections.
 forked process: 2414995
 ERROR: child process failed, exited with 1
@@ -613,26 +613,26 @@ NPM.com publish package.
 #################
 BiZ9 Framework NPM Publish
 #################
-npm notice 
+npm notice
 npm notice 📦  biz9-data-client@1.0.11
-npm notice === Tarball Contents === 
-npm notice 3.0kB adapter.js       
+npm notice === Tarball Contents ===
+npm notice 3.0kB adapter.js
 npm notice 80B   babel.config.json
-npm notice 112B  biz9_config      
-npm notice 989B  index.js         
-npm notice 376B  package.json     
-npm notice 78B   test_run         
-npm notice 3.8kB test.js          
-npm notice === Tarball Details === 
-npm notice name:          biz9-data-client                        
-npm notice version:       1.0.11                                  
-npm notice filename:      biz9-data-client-1.0.11.tgz             
-npm notice package size:  2.0 kB                                  
-npm notice unpacked size: 8.4 kB                                  
+npm notice 112B  biz9_config
+npm notice 989B  index.js
+npm notice 376B  package.json
+npm notice 78B   test_run
+npm notice 3.8kB test.js
+npm notice === Tarball Details ===
+npm notice name:          biz9-data-client
+npm notice version:       1.0.11
+npm notice filename:      biz9-data-client-1.0.11.tgz
+npm notice package size:  2.0 kB
+npm notice unpacked size: 8.4 kB
 npm notice shasum:        36c73dbda81e66e805d472c0ecf42a441161cbb1
 npm notice integrity:     sha512-3hMoCypEdlSWA[...]S45VFp7D/WD4Q==
-npm notice total files:   7                                       
-npm notice 
+npm notice total files:   7
+npm notice
 npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access
 + biz9-data-client@1.0.11
 ############
@@ -643,7 +643,7 @@ END
 ```
 
 ### <a id="9_os_info"></a>9_os_info
-The local development box operating system. 
+The local development box operating system.
 #### Params
 - none
 #### Example
@@ -666,7 +666,7 @@ Start the Redis server on the local development box.
 ```
 
 ### <a id="9_redis_flush"></a>9_redis_flush
-Flush the Redis server. 
+Flush the Redis server.
 #### Params
 - none
 #### Example
@@ -677,7 +677,7 @@ Flush the Redis server.
 ### <a id="9_open_unzip"></a>9_open_unzip
 Extract contents from a zip file into the folder.
 #### Params
-- filename ( string ) 
+- filename ( string )
 #### Example
 ```bash
 -- n/a --
@@ -703,7 +703,7 @@ Create a zip file from the folder.
 ### <a id="9_kill_app"></a>9_kill_app
 Kill running process on local development box.
 #### Params
-- running proccess ID ( int ) 
+- running proccess ID ( int )
 #### Example
 ```bash
 -- n/a --
