@@ -1,6 +1,6 @@
 {
   "name": "biz9-scriptz",
-  "version": "5.2.35",
+  "version": "5.2.36",
   "description": "The BiZ9-ScriptZ Package package handles popular programming scripting for common application development tasks. The scripts handle actions for popular programs such as Git, Android, iOS, React, React Native, Mongo, Node Package Manager, Redis, and Zip. The package consists of Terminal commands to quickly run these scripts using your keyboard alone. While in the Terminal you can run these commands directly from your project.",
   "main": "index.js",
   "scripts": {
