@@ -754,10 +754,9 @@ He is sometimes referred to as “the real Tank” from the movie [**The Matrix*
 
 - <a href="https://a.co/d/2BDjSYb" target="_blank">Tank9Code E-Book</a>
 - <a href="https://medium.com/@tank9code/about-brandon-poole-sr-ac2fe8e06a09" target="_blank">Tank9Code Blog</a>
-- <a href="https://instagram.com/tank9code" target="_blank">Tank9Code Twitter</a>
+- <a href="https://twitter.com/tank9code" target="_blank">Tank9Code Twitter</a>
 - <a href="https://instagram.com/tank9code" target="_blank">Tank9Code Instagram</a>
-- <a href="https://a.co/d/2BDjSYb" target="_blank">Tank9Code Youtube</a>
-- [Tank9Code E-Book](https://youtube.com/@tank9code){:target="_blank"}
+- <a href="https://youtube.com/@tank9code" target="_blank">Tank9Code Youtube</a>
 
 #### TagZ:
 ##### #BoSSAppZ
