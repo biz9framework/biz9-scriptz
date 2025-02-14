@@ -727,6 +727,7 @@ Kill all running programs that match given title.
 -- n/a --
 ```
 
+## Contents
 ### <a id="credit"></a>Credits
 
 #### Company
