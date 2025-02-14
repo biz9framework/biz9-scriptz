@@ -734,9 +734,13 @@ Kill all running programs that match given title.
 
 #### Code
 - [BiZ9 Framework Github](https://github.com/biz9framework)
+- [BiZ9 Framework NPM](https://www.npmjs.com/~biz9framework)
 
 #### E-mail
-- certifiedcoderz@gmail.com
+- [biz9framework@gmail.com](mailto:biz9framework@gmail.com)
+
+#### Support
+- [Cash App](https://cash.app/$bossappzstudio)
 
 #### The BiZ9 Framework 🦾
 ![BiZ9 Framework Logo](https://github.com/biz9framework/biz9-art/blob/bbdba253e9b36e9eb88ce76d4982f09ee1379e05/biz9-framework/logo/logox400.png)
