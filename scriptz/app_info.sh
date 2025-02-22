@@ -13,17 +13,19 @@ echo "Version: " ${VERSION};
 echo "App Title ID: " ${APP_TITLE_ID};
 echo "Project ID: " ${PROJECT_ID};
 echo "Port ID: " ${PORT_ID};
-echo '__________________________ APP-INFO-END _________________________________________';
 echo '__________________________ GIT-INFO-START _________________________________________';
 echo "Repo: " ${REPO};
 echo "Branch: " ${BRANCH};
-echo '__________________________ MONGODB-START _________________________________________';
-echo "Mongo IP: " ${MONGO_IP};
-echo "Mongo Username Password: " ${MONGO_USERNAME_PASSWORD};
-echo "Mongo Port ID: " ${MONGO_PORT_ID};
-echo "Mongo Server User: " ${MONGO_SERVER_USER};
-echo "Mongo Config File: " ${MONGO_CONFIG_PATH};
-echo "SSH Key: " ${SSH_KEY};
-echo '__________________________ MONGODB-END _________________________________________';
+
+if [ "${HAS_MONGO_DB}" = "true" ]; then
+    echo '__________________________ MONGODB-START _________________________________________';
+    echo "Mongo IP: " ${MONGO_IP};
+    echo "Mongo Username Password: " ${MONGO_USERNAME_PASSWORD};
+    echo "Mongo Port ID: " ${MONGO_PORT_ID};
+    echo "Mongo Server User: " ${MONGO_SERVER_USER};
+    echo "Mongo Config File: " ${MONGO_CONFIG_PATH};
+    echo "SSH Key: " ${SSH_KEY};
+fi
+
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
