@@ -1,5 +1,5 @@
 # BiZ9-ScriptZ
-The BiZ9-ScriptZ framework component handles all scripting for the BiZ9-Framework. 
+The BiZ9-ScriptZ framework component handles all scripting for the BiZ9-Framework.
 
 ## Installation
 Use the [npm](https://npm.com) installer to install.
@@ -49,7 +49,7 @@ npm install biz9-scriptz
 
 
 #### About
-* [Credit](#credit) 
+* [Credit](#credit)
 
 -------------------------------------------------------------
 ### <a id="9_blank"></a>9_blank
@@ -69,7 +69,7 @@ Print BiZ9 project application specifications.
 - none
 #### Example
 ```bash
-$ 9_app_info 
+$ 9_app_info
 #################
 BiZ9 Framework App Info
 #################
@@ -115,14 +115,14 @@ Print all open ports on system.
 #### Example
 ```bash
 $ 9_port_open_list
-tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      707/redis-server 12 
-tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      915/nginx: master p 
-tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      706/cupsd           
-tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1161/exim4          
-tcp6       0      0 ::1:631                 :::*                    LISTEN      706/cupsd           
-tcp6       0      0 ::1:25                  :::*                    LISTEN      1161/exim4          
-tcp6       0      0 :::80                   :::*                    LISTEN      915/nginx: master p 
-tcp6       0      0 ::1:6379                :::*                    LISTEN      707/redis-server 12 
+tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      707/redis-server 12
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      915/nginx: master p
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      706/cupsd
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1161/exim4
+tcp6       0      0 ::1:631                 :::*                    LISTEN      706/cupsd
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1161/exim4
+tcp6       0      0 :::80                   :::*                    LISTEN      915/nginx: master p
+tcp6       0      0 ::1:6379                :::*                    LISTEN      707/redis-server 12
 
 ```
 ### <a id="9_react_start"></a>9_react_start
@@ -132,10 +132,10 @@ Start React application server.
 #### Example
 ```bash
 $ 9_react_start
-src/feature-module/pages/our-team/teamCarousel.tsx                                                      
-Line 1:17:  'useState' is defined but never used  @typescript-eslint/no-unused-vars                     src/feature-module/router/router.link.tsx                                                               Line 338:7:  Unexpected whitespace before property notificationSetting  no-whitespace-before-property   src/feature-module/user-dashboard/user-message/index.tsx                                                Line 4:8:  'Scrollbars' is defined but never used  @typescript-eslint/no-unused-vars            
-webpack compiled with 1 warning                                                                     
-No issues found.      
+src/feature-module/pages/our-team/teamCarousel.tsx
+Line 1:17:  'useState' is defined but never used  @typescript-eslint/no-unused-vars                     src/feature-module/router/router.link.tsx                                                               Line 338:7:  Unexpected whitespace before property notificationSetting  no-whitespace-before-property   src/feature-module/user-dashboard/user-message/index.tsx                                                Line 4:8:  'Scrollbars' is defined but never used  @typescript-eslint/no-unused-vars
+webpack compiled with 1 warning
+No issues found.
 ```
 
 ### <a id="9_diff_file"></a>9_diff_file
@@ -144,7 +144,7 @@ Compare 2 different files line by line.
 - filename 1, filename 2
 #### Example
 ```bash
-$ 9_diff_file file1.js file2.js 
+$ 9_diff_file file1.js file2.js
 console.log(" This Is File 1 "); | console.log(" This Is File 2 ");
 ```
 ### <a id="9_diff_folder"></a>9_diff_folder
@@ -164,7 +164,7 @@ GIT Branch update to new version. Increment app version by 1 to make new branch 
 - none
 #### Example
 ```bash
-$ 9_git_branch_update 
+$ 9_git_branch_update
 #################
 BiZ9 Framework GIT Branch Update
 #################
@@ -182,7 +182,7 @@ Print GIT Branch list.
 - none
 #### Example
 ```bash
-$ 9_git_branch_list 
+$ 9_git_branch_list
 #################
 BiZ9 Framework GIT Branch List
 #################
@@ -207,7 +207,7 @@ GIT commit aka save your code changes.
 - none
 #### Example
 ```bash
-9_git_commit 
+9_git_commit
 #################
 BiZ9 Framework App Git Commit
 #################
@@ -235,7 +235,7 @@ GIthub.com with system connectivity test.
 - none
 #### Example
 ```bash
-$ 9_git_hub_test 
+$ 9_git_hub_test
 Hi biz9framework! You've successfully authenticated, but GitHub does not provide shell access.
 
 ```
@@ -245,7 +245,7 @@ GIT push your code to GIT remote repository.
 - none
 #### Example
 ```bash
-$ 9_git_push 
+$ 9_git_push
 #################
 BiZ9 Framework Git Push
 #################
@@ -279,7 +279,7 @@ GIT reset, then intalize new GIT, last check out to main branch.
 - none
 #### Example
 ```bash
-9_git_reset_init 
+9_git_reset_init
 #################
 BiZ9 Framework GIT Reset Init
 #################
@@ -304,7 +304,7 @@ GIT switch to ‘main’ branch and checkout out 'main' branch.
 - none
 #### Example
 ```bash
-$ 9_git_main_branch_merge_checkout 
+$ 9_git_main_branch_merge_checkout
 #################
 BiZ9 Framework Git Main Branch Merge Checkout
 #################
@@ -391,72 +391,59 @@ Open system port for React Native log messages.
 -- coming soon --
 ```
 
-
-
-------------------------------------------------------------------------------------
+## Credits
 ### <a id="credit"></a>Credits
 
 #### Company
-- BoSS AppZ
+- **BiZ9 Framework LLC**
 
 #### Code
 - [BiZ9 Framework Github](https://github.com/biz9framework)
-- [BiZ9 Data](https://www.npmjs.com/package/biz9-data)
-- [BiZ9 Data](https://www.npmjs.com/package/biz9-data)
+- [BiZ9 Framework NPM](https://www.npmjs.com/~biz9framework)
 
 #### E-mail
-- certifiedcoderz@gmail.com
-#### Website
-- [bossappz.com](https://bossappz.com)
-- [mobile.bossappz.com](https://mobile.bossappz.com)
-#### BoSS AppZ 💰
-BoSS AppZ are web and mobile applications built for the BoSS on the go. The primary features of the BoSS AppZ are ThemeForest.net, The BiZ9 Framework, and Amazon Web Services. BoSS ApZZ powers many applications in the healthcare, retail and manufacturing industries.
-- [Blog](https://bossappz.medium.com)
-#### App Money NoteZ 💯
-Application Development NoteZ That Make $ense! Cuts out all the blah, blah, blah and gets right to the resultZ!
+- [biz9framework@gmail.com](mailto:biz9framework@gmail.com)
+
+#### Support
+- [Cash App](https://cash.app/$bossappzstudio)
+
 #### The BiZ9 Framework 🦾
-The BiZ9 Framework is a user-friendly platform for building fast and scalable network applications. The framework consists of libraries and software tools like: Node,js, React Native, Angular, ExpressJS, MongoDB, Nginx, Redis, GIT, and Bash scripts. The BIZ9 Framework is designed to build, maintain, and deploy rich and robust, applications for web, Android and Apple devices. Other 3rd party  Application Programming Interfaces included are Amazon Web Service, Stripe, and Bravely.
-- [Website](https://github.com/biz9framework)
-- [Blog](https://bossappz.medium.com/what-is-the-biz9-framework-29731c49ad79)
-#### BoSS AppZ Developer  ClaZZ💡
-The BoSS AppZ Application Development Class is custom designed for each individual that desires to learn the art of application development for career or self-use purposes. We will teach you and train you on how to become a full stack application developer. Mobile applications are the future. Stay informed with the best and greatest tools for application development. 
-- [Website](https://bossappz.com)
+![BiZ9 Framework Logo](https://github.com/biz9framework/biz9-art/blob/main/biz9-framework/logo/logox250.png?raw=true)
+
+**The BiZ9 Framework** is a developer friendly platform for building premium, polished, fast, professional and scalable business applications using the lastest rapid application development tools and techniques. The framework consists of libraries, commands, scripts, and packages for creating, maintaining, testing, and deploying both **mobile** and **website applications**. The primary 3rd party framework used are [**React**](https://react.dev/), [**React Native**](https://reactnative.dev/), [**Node.js**](http://Node.js), [**ExpressJS**](https://expressjs.com/), [**MongoDB**](https://www.mongodb.com/), [**Nginx**](https://nginx.org/), [**Redis**](https://redis.io/), [**Git**](https://git-scm.com/), and [**Bash**](https://www.gnu.org/software/bash/). **The BiZ9 Framework** focus is to be precise, routine, rapid, and customizable. The primary target devices for **The BiZ9 Framework** are [**Apple iOS**](https://developer.apple.com/), [**Android**](https://www.android.com/), [**Chrome**](https://www.google.com/chrome/), [**Safari**](https://www.apple.com/safari/), [**Firefox**](https://www.mozilla.org/en-US/firefox/), and [**Edge**](https://www.microsoft.com/en-us/edge/?form=MA13FJ). Other 3rd party Application Programming Interfaces (API) that are pre included are [**Amazon Web Service**](https://aws.amazon.com/), [**Stripe**](https://stripe.com/) and [**Bravely**](https://workbravely.com/).
+
+- <a href="https://github.com/biz9framework" target="_blank">Biz9 Framework GitHub</a>
+- <a href="https://bossappz.medium.com/what-is-the-biz9-framework-29731c49ad79" target="_blank">Biz9 Framework Blog</a>
+- <a href="https://youtu.be/W_ZUmwZMFoc?si=4b5_6q9vPgi1IxPL" target="_blank">BoSS Mobile App Youtube Demo</a>
+
 #### TaNK9 Code 👽
-Brandon Poole Sr also known as ‘TaNK’ is a full stack application developer
-born and raised in Atlanta Ga and graduated with a Computer Information Systems degree from Fort Valley State University (FVSU).  While attending FVSU Mr. Poole created a social network titled CrunkFriends. It accumulated over 50k registered members and was the first of its kind back in 2005.
+![TaNK9 Code Head](https://github.com/biz9framework/biz9-art/blob/main/tank9code/head/tank9_headx250.png?raw=true)
 
-Mr. Poole went on to have a career as a Senior Application Developer for many premium Technology companies. The names of those tech companies are Colonial Pipeline, The Boeing Company, Georgia Pacific, Nascar, Home Depot, the Center for Disease Control, American Cancer Society, and the United Parcel Service (UPS). 
+**Brandon Poole Sr** also known as **‘TaNK’** is a technical lead and full stack software engineer with over 19 years of professional experience. He was born and raised in **Atlanta, Ga** and graduated with a Computer Information Systems **Bachelor of Science Degree** from [**Fort Valley State University**](https://www.fvsu.edu/). He is proficient in [**ASP.NET C#**](http://ASP.NET), [**ASP.NET MVC**](https://dotnet.microsoft.com/en-us/apps/aspnet/mvc), [**.NET Core**](https://dotnet.microsoft.com/en-us/download), [**Microsoft SQL Server**](https://www.microsoft.com/en-us/sql-server), [**IIS Web Server**](https://learn.microsoft.com/en-us/iis/get-started/introduction-to-iis/iis-web-server-overview), [**Node.js**](http://Node.js), [**React**](https://react.dev/), [**React Native**](https://reactnative.dev/), [**Framework7**](https://framework7.io/), [**Redis**](https://redis.io/), [**Amazon Web Services**](https://aws.amazon.com/), [**Apple iOS**](https://developer.apple.com/ios/), [**Android SDK**](https://developer.android.com/studio), [**MongoDB**](https://www.mongodb.com/), [**Redis**](https://redis.io/), [**NGINX**](https://nginx.org/), and [**Git**](https://git-scm.com/). He has worked as a software developer for Fortune 500 companies such as [**The Boeing Company**](https://www.boeing.com/), [**Georgia Pacific**](https://www.gp.com/), [**Colonial Pipeline**](https://www.colpipe.com/), [**Home Depot**](https://corporate.homedepot.com/) and [**United Parcel Services**](https://www.ups.com/us/en/home).
 
-He is sometimes referred to as “the real Tank” from the movie The Matrix.
+He is sometimes referred to as “the real Tank” from the movie [**The Matrix**](https://www.imdb.com/title/tt0133093/).
 
-- [Website](https://certifiedcoderz.com)
-- [Blog](https://medium.com/@tank9code/about-brandon-poole-sr-ac2fe8e06a09)
-- [Email](mailto:certifiedcoderz@gmail.com)
-#### Brandon Poole Sr.
-- BoSS AppZ Creator
-- 9_OPZ #Certified CoderZ Founder
-- The Real Tank from the #Matrix movie! 
-- Expert in Open Source Software
-#### LinkZ:
-- [bossappz.com](bossappz.com)
-- [medium.com/bossappz](medium.com/bossappz)
-- [bossappz.blogspot.com](https://bossappz.blogspot.com)
-- [twitter.com/boss_appz](https:twitter.com/boss_appz)
-- [youtube.com/boss_appz](https://www.youtube.com/@mybossapp/videos)
-- [instagram.com/bossappz_showcase](instagram.com/bossappz_showcase)
-- [facebook.com/bossappz](facebook.com/bossappz)
+- **Tank9 TooLZ Book** [Amazon E-Book](https://a.co/d/2BDjSYb)
+- [Tank9Code Blog](https://medium.com/@tank9code/about-brandon-poole-sr-ac2fe8e06a09)
+- [Tank9Code Twitter](https://instagram.com/tank9code)
+- [Tank9Code Instagram](https://instagram.com/tank9code)
+- [Tank9Code Youtube](https://youtube.com/@tank9code)
+
 #### TagZ:
-##### #BoSSAppZ
 ##### #BiZ9Framework
-##### #EBook
+##### #BoSSAppZ
 ##### #Mobile
 ##### #Apple
 ##### #Android
+##### #ApplicationDevelopment
+##### #SoftwareFramework
+##### #Cloud
 ##### #IOS
 ##### #Linux
-##### #AmazonWebServices
+##### #JavaScript
+##### #NoSQL
 ##### #AppMoneyNoteZ
-##### #TaNKCode9
+##### #TaNK9Code
 ##### Thank you for your time.
 #####  Looking forward to working with you.
 ### License
