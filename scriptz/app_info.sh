@@ -13,7 +13,7 @@ echo "Version: " ${VERSION};
 echo "App Title ID: " ${APP_TITLE_ID};
 echo "Project ID: " ${PROJECT_ID};
 echo "Port ID: " ${PORT_ID};
-echo '__________________________ GIT-INFO-START _________________________________________';
+echo '__________________________ Git-INFO-START _________________________________________';
 echo "Repo: " ${REPO};
 echo "Branch: " ${BRANCH};
 
