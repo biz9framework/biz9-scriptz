@@ -1,0 +1,5 @@
+echo 'BiZ9-ScriptZ Test'
+run_test=$1
+echo $run_test
+npx jest -t $run_test
+
