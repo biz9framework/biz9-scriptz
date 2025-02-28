@@ -1,3 +1,4 @@
+const fs = require('fs');
 const biz9_config_file=__dirname+"/../../"+"biz9_config";
 
 const get_biz9_config = () => {
