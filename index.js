@@ -2,7 +2,7 @@ const fs = require('fs');
 const biz9_config_file=__dirname+"/../../"+"biz9_config";
 
 class Scriptz {
-    static get_biz9 =(biz9_config_src) => {
+    static get_biz9_config =(biz9_config_src) => {
         if(!biz9_config_src){
             biz9_config_src=biz9_config_file;
         }
