@@ -28,7 +28,7 @@ class Scriptz {
                 }
             });
             if(options.app_title_id){
-                biz9_config.app_title_id=options.app_title_id;
+                biz9_config.APP_TITLE_ID=options.app_title_id;
             }
             return biz9_config;
         }
