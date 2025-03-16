@@ -1,9 +1,9 @@
-const fs = require('fs');
 const biz9_config_local=__dirname+"/../../"+"biz9_config";
 
 class Scriptz {
     //options = {biz9_config_file:'file_to_biz9_config, app_title_id:dynamic_app_title_id};
     static get_biz9_config =(options) => {
+        let biz9_config = {};
         let loc_biz9_config_file = null;
         if(!options){
             options={};
@@ -13,25 +13,28 @@ class Scriptz {
         if(!options.biz9_config_file){
             loc_biz9_config_file=biz9_config_local;
         }
-       if (!fs.existsSync(loc_biz9_config_file)) {
-            console.log('biz9_config_file',loc_biz9_config_file);
-            console.log('File does not exist');
-            console.log('BiZ9 Config File. No Source Availble.');
-        } else {
-            let biz9_config = {};
-            let fileContent = fs.readFileSync(loc_biz9_config_file, 'utf-8');
-            let lines = fileContent.split('\n');
-            lines.forEach(line => {
-                const [key, value] = line.split('=');
-                if (key && value) {
-                    biz9_config[key] = value.replace(/"/g, '').replace(/'/g, '').replace(/;/g, ''); // Remove quotes
+        if (typeof window === 'undefined') {
+            const fs = require('fs');
+            if (!fs.existsSync(loc_biz9_config_file)) {
+                console.log('biz9_config_file',loc_biz9_config_file);
+                console.log('File does not exist');
+                console.log('BiZ9 Config File. No Source Availble.');
+            } else {
+                let fileContent = fs.readFileSync(loc_biz9_config_file, 'utf-8');
+                let lines = fileContent.split('\n');
+                lines.forEach(line => {
+                    const [key, value] = line.split('=');
+                    if (key && value) {
+                        biz9_config[key] = value.replace(/"/g, '').replace(/'/g, '').replace(/;/g, ''); // Remove quotes
+                    }
+                });
+                if(options.app_title_id){
+                    biz9_config.APP_TITLE_ID=options.app_title_id;
                 }
-            });
-            if(options.app_title_id){
-                biz9_config.APP_TITLE_ID=options.app_title_id;
             }
-            return biz9_config;
         }
+        return biz9_config;
+
     }
 }
 
