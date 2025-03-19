@@ -9,6 +9,7 @@ npm install biz9-scriptz
 ```
 ## Required
 * [BiZ9 Config File](biz9_config_file)
+* [Bashrc](bashrc)
 
 ## Optional
 * [GIT](https://git-scm.com/downloads)
@@ -46,10 +47,6 @@ npm install biz9-scriptz
 * [9_mongo_shell](#9_mongo_shell)
 #### NPM
 * [9_npm_cache_clear]() tbd
-
-
-
-
 
 #### About
 * [Credit](#credit)
@@ -393,6 +390,69 @@ Open system port for React Native log messages.
 ```bash
 -- coming soon --
 ```
+## Bashrc Config
+### <a id="bashrc"></a>Bash Config file
+Add the below aliases to your .bashrc file.
+
+## BiZ9 Framework ScriptZ Alias Start ###
+#app
+alias 9_app_info="bash ${BIZ9_SCRIPTZ_DIRECTORY}app_info.sh";
+
+#app service
+alias 9_node_service_start='nodemon bin/www';
+alias 9_port_open_list='sudo netstat -ntlp | grep LISTEN';
+alias 9_react_start='npm start';
+
+alias 9_search_string_filez="bash ${BIZ9_SCRIPTZ_DIRECTORY}search_string_filez.sh";
+alias 9_search_filename="bash ${BIZ9_SCRIPTZ_DIRECTORY}search_filename.sh";
+
+alias 9_open_unzip="unzip ";
+alias 9_open_ungzip="gzip -d ";
+alias 9_open_zip_create="zip -r my_arch.zip my_folder";
+
+alias 9_kill_app='kill -9 ';
+alias 9_kill_all_node='killall node';
+alias 9_kill_all_app='killall ';
+
+#diff
+alias 9_diff_file='diff --side-by-side';
+alias 9_diff_folder="diff --brief --recursive --exclude '*.git'";
+
+#git
+alias 9_git_branch_update="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_branch_update.sh"
+alias 9_git_branch_list="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_branch_list.sh";
+alias 9_git_commit="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_commit.sh";
+alias 9_git_hub_test='ssh -T git@github.com';
+alias 9_git_push="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_push.sh";
+alias 9_git_pull="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_pull.sh";
+alias 9_git_reset_init="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_reset_init.sh";
+alias 9_git_main_branch_merge_checkout="bash ${BIZ9_SCRIPTZ_DIRECTORY}git_main_branch_merge_checkout.sh";
+
+#mobile
+alias 9_mobile_android_emulator_start='genymotion';
+alias 9_mobile_react_build="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_build.sh";
+alias 9_mobile_react_cache_reset="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_cache_reset.sh";
+alias 9_mobile_react_clean="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_clean.sh";
+alias 9_mobile_react_device_build_deploy="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_device_build_deploy";
+alias 9_mobile_react_device_log_android="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_device_log_android.sh";
+alias 9_mobile_react_device_port_open="bash ${BIZ9_SCRIPTZ_DIRECTORY}mobile_react_device_port_open.sh";
+
+#mongo
+alias 9_mongo_shell='mongosh --shell --port 27019';
+alias 9_mongo_start="sudo mongod --fork --config /etc/mongod.conf";
+
+#npm
+alias 9_npm_publish="bash ${BIZ9_SCRIPTZ_DIRECTORY}npm_publish.sh";
+alias 9_npm_cache_clear="bash ${BIZ9_SCRIPTZ_DIRECTORY}npm_cache_clear.sh";
+
+#redis
+alias 9_redis_start="service redis-server start";
+alias 9_redis_flush="redis-cli FLUSHALL";
+
+#os
+alias 9_os_info="lsb_release -a";
+
+## BiZ9 Framework ScriptZ Alias End ###
 
 ## Credits
 ### <a id="credit"></a>Credits
