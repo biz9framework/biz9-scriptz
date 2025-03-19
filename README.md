@@ -396,6 +396,9 @@ Add the below aliases to your .bashrc file.
 
 ```bash
 ## BiZ9 Framework ScriptZ Alias Start ###
+
+#export BIZ9_SCRIPTZ_DIRECTORY="node_modules/biz9-scriptz/scriptz/";
+
 #app
 alias 9_app_info="bash ${BIZ9_SCRIPTZ_DIRECTORY}app_info.sh";
 
