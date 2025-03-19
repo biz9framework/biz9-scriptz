@@ -394,6 +394,7 @@ Open system port for React Native log messages.
 ### <a id="bashrc"></a>Bash Config file
 Add the below aliases to your .bashrc file.
 
+```bash
 ## BiZ9 Framework ScriptZ Alias Start ###
 #app
 alias 9_app_info="bash ${BIZ9_SCRIPTZ_DIRECTORY}app_info.sh";
@@ -451,6 +452,7 @@ alias 9_redis_flush="redis-cli FLUSHALL";
 
 #os
 alias 9_os_info="lsb_release -a";
+```
 
 ## BiZ9 Framework ScriptZ Alias End ###
 
