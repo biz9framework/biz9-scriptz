@@ -7,7 +7,7 @@ echo "#################"
 echo "BiZ9 Framework NPM Publish"
 echo "#################"
 
-sudo npm publish --access public
+npm publish --access public
 
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
