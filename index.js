@@ -1,7 +1,7 @@
 const biz9_config_local=__dirname+"/../../"+"biz9_config";
 
 class Scriptz {
-    //options = {biz9_config_file:'file_to_biz9_config, app_title_id:dynamic_app_title_id};
+    //options = {biz9_config_file:'file_to_biz9_config, app_id:dynamic_app_title_id};
     static get_biz9_config =(options) => {
         let biz9_config = {};
         let loc_biz9_config_file = null;
@@ -28,8 +28,8 @@ class Scriptz {
                         biz9_config[key] = value.replace(/"/g, '').replace(/'/g, '').replace(/;/g, ''); // Remove quotes
                     }
                 });
-                if(options.app_title_id){
-                    biz9_config.APP_TITLE_ID=options.app_title_id;
+                if(options.app_id){
+                    biz9_config.APP_ID=options.app_id;
                 }
             }
         }

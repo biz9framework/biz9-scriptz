@@ -10,7 +10,7 @@ echo '__________________________ APP-INFO-STAT _________________________________
 
 echo "Title: " ${TITLE};
 echo "Version: " ${VERSION};
-echo "App Title ID: " ${APP_TITLE_ID};
+echo "App ID: " ${APP_ID};
 echo "Project ID: " ${PROJECT_ID};
 echo "Port ID: " ${PORT_ID};
 echo '__________________________ Git-INFO-START _________________________________________';
