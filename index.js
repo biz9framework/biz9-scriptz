@@ -33,7 +33,6 @@ class Scriptz {
                 }else if(options.app_id){
                     biz9_config.APP_ID=options.app_id;
                 }
-
             }
         }
         return biz9_config;
