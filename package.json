@@ -1,6 +1,6 @@
 {
   "name": "biz9-scriptz",
-  "version": "5.6.10",
+  "version": "5.7.1",
   "description": "The BiZ9-ScriptZ framework component handles all scripting for the BiZ9-Framework. ",
   "main": "index.js",
   "scripts": {
