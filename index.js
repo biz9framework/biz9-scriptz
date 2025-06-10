@@ -31,7 +31,7 @@ class Scriptz {
                 });
                 if(!Str.check_is_null(options.APP_ID)){
                     biz9_config.APP_ID=options.APP_ID;
-                }else if(!Str.check_is_null(options.APP_ID)){
+                }else if(!Str.check_is_null(options.app_id)){
                     biz9_config.APP_ID=options.app_id;
                 }
             }
