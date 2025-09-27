@@ -9,7 +9,17 @@ echo "#################"
 echo 'Enter Text:'
 read str
 echo '##############'
-grep -rnw $(pwd)/ -e ${str}
+echo "Enter Folder Path"
+read folder_path
+if [[  "$folder_path" = ""  ]] ; then
+    folder_path = "/"
+    else
+    echo "exit"
+fi
+echo $(pwd)/${folder_path}
+echo grep -rnH $(pwd)/${folder_path} -F ${str}
+grep -rnH ${str} -F $(pwd)/${folder_path}
+
 echo "----------------------------------"
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
