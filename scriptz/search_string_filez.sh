@@ -16,8 +16,8 @@ if [[  "$folder_path" = ""  ]] ; then
     else
     echo "exit"
 fi
-grep -rnH ${str} -F $(pwd)/${folder_path}
 echo "--------- Search ResultZ ---------"
+grep -rnH ${str} -F $(pwd)/${folder_path}
 echo "----------------------------------"
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
