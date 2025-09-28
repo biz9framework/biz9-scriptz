@@ -13,6 +13,10 @@ echo "Enter Folder Path"
 read folder_path
 echo "--------- Search ResultZ ---------"
 grep -rnH ${str} -F $(pwd)/${folder_path}
+echo "--------- Search Text ---------"
+echo ${str}
+echo "--------- Folder Path ---------"
+echo ${folder_path}
 echo "----------------------------------"
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
