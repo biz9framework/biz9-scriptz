@@ -11,11 +11,6 @@ read str
 echo '##############'
 echo "Enter Folder Path"
 read folder_path
-if [[  "$folder_path" = ""  ]] ; then
-    folder_path = "/"
-    else
-    echo "exit"
-fi
 echo "--------- Search ResultZ ---------"
 grep -rnH ${str} -F $(pwd)/${folder_path}
 echo "----------------------------------"
