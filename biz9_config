@@ -1,7 +1,7 @@
-VERSION='5.9.2'
+VERSION='5.9.3'
 TITLE='BiZ9-Scriptz'
 REPO='git@github.com:biz9framework/biz9-scriptz.git'
-BRANCH='main'
+BRANCH='5.9.3'
 BIZ9_CONFIG_FILE='biz9_config';
 HAS_MONGO_DB=false;
 APP_ID='19';

@@ -10,10 +10,17 @@ bash ${BIZ9_SCRIPTZ_DIRECTORY}view_git_sub_header.sh
 NEW_BRANCH='main';
 echo "Are you sure?"
 read n
+echo 'Enter notes:'
+read commit_notes
 if [[  "$n" = "yes"  ]] ; then
-    git branch -D main
-    git branch --show current
-    sed -i "s/BRANCH=.*/BRANCH='${NEW_BRANCH}'/" biz9_config
+    git add -A .
+    git commit -m  "${commit_notes}"
+    git branch main
+    git checkout main
+    git add -A .
+    git commit -m  "${commit_notes}"
+    git merge ${BRANCH}
+    sed -i "s/BRANCH=.*/BRANCH='main'/" biz9_config
 else
     echo "exit"
 fi
