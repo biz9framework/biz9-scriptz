@@ -1,3 +1,9 @@
+/*
+Copyright 2016 Certified CoderZ
+Author: Brandon Poole Sr. (biz9framework@gmail.com)
+License GNU General Public License v3.0
+Description: BiZ9 Framework: ScriptZ
+*/
 const {Str} = require("biz9-utility");
 const biz9_config_local=__dirname+"/../../"+"biz9_config";
 
@@ -41,7 +47,6 @@ class Scriptz {
         return biz9_config;
     }
 }
-
 module.exports = {
     Scriptz,
 };
