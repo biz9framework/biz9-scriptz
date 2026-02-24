@@ -6,7 +6,7 @@ source biz9_config
 echo "#################"
 echo "BiZ9 Framework App Git Commit"
 echo "#################"
-bash ${BIZ9_SCRIPTZ_DIRECTORY}view_git_sub_header.sh
+
 INCREMENT_VERSION ()
 {
     declare -a part=( ${1//\./ } )
@@ -26,9 +26,10 @@ echo 'Enter notes:'
 read commit_notes
 VERSION_NEW=$(INCREMENT_VERSION ${VERSION});
 echo ${APP_VERSION_NEW}
-sed -i "s/VERSION=.*/VERSION='${VERSION_NEW}'/" biz9_config
 git add -A .
 git commit -m  "${commit_notes}"
 npm version patch --no-git-tag-version --tag-version-prefix=''
+PACKAGE_VERSION=$(npm pkg get version --workspaces=false | tr -d '"')
+sed -i "s/VERSION=.*/VERSION='${PACKAGE_VERSION}'/" biz9_config
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
 exit
