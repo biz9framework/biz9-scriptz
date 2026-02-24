@@ -1,13 +1,13 @@
 {
   "name": "biz9-scriptz",
-  "version": "5.8.18",
+  "version": "5.8.19",
   "description": "The BiZ9-ScriptZ framework component handles all scripting for the BiZ9-Framework. ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "#Certified CoderZ",
-  "license": "ISC",
+  "author": "Brandon Poole Sr (BiZ9 Framework LLC)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/biz9framework/biz9-scriptz.git"
@@ -15,11 +15,21 @@
   "bugs": {
     "url": "https://github.com/biz9framework/biz9-scriptz/issues"
   },
-  "homepage": "https://github.com/biz9framework/biz9-scriptz#readme",
+  "homepage": ""https://github.com/biz9framework,
   "dependencies": {
     "biz9-scriptz": "^5.8.12",
     "biz9-utility": "^3.8.68",
     "fs-extra": "^11.3.0",
     "jest": "^29.7.0"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "JavaScript",
+    "Async",
+    "Utility",
+    "Git",
+    "Filename",
+    "Search",
+    "Command-Line"
+  ]
 }

@@ -1,4 +1,4 @@
-VERSION='6.0.0'
+VERSION='6.0.1'
 TITLE='BiZ9-Scriptz'
 REPO='git@github.com:biz9framework/biz9-scriptz.git'
 BRANCH='5.9.9'
