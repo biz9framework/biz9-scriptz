@@ -1,6 +1,6 @@
-VERSION='6.0.1'
+VERSION='6.0.2'
 TITLE='BiZ9-Scriptz'
 REPO='git@github.com:biz9framework/biz9-scriptz.git'
-BRANCH='5.9.9'
+BRANCH='main'
 BIZ9_CONFIG_FILE='biz9_config';
 BIZ9_PRODUCT_TITLE='biz9-service';
