@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/biz9framework/biz9-scriptz/issues"
   },
-  "homepage": ""https://github.com/biz9framework,
+  "homepage": "https://github.com/biz9framework",
   "dependencies": {
     "biz9-scriptz": "^5.8.12",
     "biz9-utility": "^3.8.68",
