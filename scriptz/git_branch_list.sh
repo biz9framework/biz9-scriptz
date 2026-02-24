@@ -1,7 +1,7 @@
-# Copyright 2023 Certified CoderZ
-# Author: certifiedcoderz@gmail.com (Certified CoderZ)
+# Copyright 2016 Certified CoderZ
+# Author: Brandon Poole Sr. (biz9framework@gmail.com)
 # License GNU General Public License v3.0
-# Description: BiZ9 Framework ScriptZ : Git Branch List
+# Description: BiZ9 Framework : Git Branch List
 source biz9_config
 echo "#################"
 echo "BiZ9 Framework Git Branch List"

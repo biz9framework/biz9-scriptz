@@ -1,31 +1,13 @@
-# Copyright 2023 Certified CoderZ
-# Author: certifiedcoderz@gmail.com (Certified CoderZ)
+# Copyright 2016 Certified CoderZ
+# Author: Brandon Poole Sr. (biz9framework@gmail.com)
 # License GNU General Public License v3.0
-# Description: BiZ9 Framework ScriptZ : Git Commit
+# Description: BiZ9 Framework: Git Commit
 source biz9_config
 echo "#################"
 echo "BiZ9 Framework App Git Commit"
 echo "#################"
-
-INCREMENT_VERSION ()
-{
-    declare -a part=( ${1//\./ } )
-        declare    new
-        declare -i carry=1
-
-        for (( CNTR=${#part[@]}-1; CNTR>=0; CNTR-=1 )); do
-            len=${#part[CNTR]}
-            new=$((part[CNTR]+carry))
-        [ ${#new} -gt $len ] && carry=1 || carry=0
-        [ $CNTR -gt 0 ] && part[CNTR]=${new: -len} || part[CNTR]=${new}
-    done
-        new="${part[*]}"
-        echo -e "${new// /.}"
-}
 echo 'Enter notes:'
 read commit_notes
-VERSION_NEW=$(INCREMENT_VERSION ${VERSION});
-echo ${APP_VERSION_NEW}
 git add -A .
 git commit -m  "${commit_notes}"
 npm version patch --no-git-tag-version --tag-version-prefix=''

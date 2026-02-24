@@ -1,30 +1,33 @@
-# Copyright 2023 Certified CoderZ
-# Author: certifiedcoderz@gmail.com (Certified CoderZ)
+# Copyright 2016 Certified CoderZ
+# Author: Brandon Poole Sr. (biz9framework@gmail.com)
 # License GNU General Public License v3.0
-# Description: BiZ9 Framework ScriptZ : App Info
+# Description: BiZ9 Framework : App Info
 source biz9_config
 echo "#################"
 echo "BiZ9 Framework App Info"
 echo "#################"
 echo '__________________________ APP-INFO-STAT _________________________________________';
-
 echo "Title: " ${TITLE};
 echo "Version: " ${VERSION};
-echo "App ID: " ${APP_ID};
-echo "Project ID: " ${PROJECT_ID};
-echo "Port ID: " ${PORT_ID};
-echo '__________________________ Git-INFO-START _________________________________________';
-echo "Repo: " ${REPO};
-echo "Branch: " ${BRANCH};
 
-if [ "${HAS_MONGO_DB}" = "true" ]; then
-    echo '__________________________ MONGODB-START _________________________________________';
-    echo "Mongo IP: " ${MONGO_IP};
-    echo "Mongo Username Password: " ${MONGO_USERNAME_PASSWORD};
-    echo "Mongo Port ID: " ${MONGO_PORT_ID};
-    echo "Mongo Server User: " ${MONGO_SERVER_USER};
-    echo "Mongo Config File: " ${MONGO_CONFIG_PATH};
-    echo "SSH Key: " ${SSH_KEY};
+if [[ -n "$APP_ID" ]]; then
+echo "App ID: " ${APP_ID};
+fi
+
+if [[ -n "$PROJECT_ID" ]]; then
+echo "Project ID: " ${PROJECT_ID};
+fi
+
+if [[ -n "$PORT_ID" ]]; then
+echo "Port ID: " ${PORT_ID};
+fi
+
+echo '__________________________ Git-INFO-START _________________________________________';
+if [[ -n "$PORT_ID" ]]; then
+echo "Repo: " ${REPO};
+fi
+if [[ -n "$BRANCH" ]]; then
+echo "Branch: " ${BRANCH};
 fi
 
 bash ${BIZ9_SCRIPTZ_DIRECTORY}view_footer.sh
