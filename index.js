@@ -9,6 +9,7 @@ const biz9_config_local=__dirname+"/../../"+"biz9_config";
 
 class Scriptz {
     //options = {biz9_config_file:'file_to_biz9_config, APP_ID:dynamic_app_id};
+    /*
     static get_biz9_config =(options) => {
         let biz9_config = {};
         let loc_biz9_config_file = null;
@@ -46,8 +47,8 @@ class Scriptz {
         }
         return biz9_config;
     }
+    */
 }
 module.exports = {
-    Scriptz,
 };
 
